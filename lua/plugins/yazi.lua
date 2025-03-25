@@ -5,7 +5,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("yazi").setup({
-        open_for_directories = true,
+        open_for_directories = false,
       })
     end,
     keys = {

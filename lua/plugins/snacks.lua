@@ -8,6 +8,9 @@ return {
     dashboard = {
       enabled = true,
       example = "compact_files",
-    }
+      preset = {
+        header = "", -- Override the default header with an empty string to remove it
+      },
+    },
   },
 }

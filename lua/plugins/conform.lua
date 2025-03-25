@@ -6,7 +6,7 @@ return {
       require("conform").setup({
         formatters_by_ft = {
           lua = { "stylua" },
-          python = { "ruff_format" }, -- Use a custom formatter name
+          python = { "ruff_format" },
           tex = { "latexindent" },
         },
         formatters = {
@@ -15,8 +15,8 @@ return {
           },
           ruff_format = {
             command = "ruff",
-            args = { "format", "--output-format", "text", "--quiet", "$FILENAME" }, -- Output formatted content to stdout
-            stdin = false, -- Ruff writes to file, not stdout
+            args = { "format", "--quiet", "-" },
+            stdin = true,
           },
           latexindent = {
             command = "latexindent",
