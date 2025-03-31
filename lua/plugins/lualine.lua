@@ -22,14 +22,14 @@ return {
 
       local nightfox_colors = {
         dayfox = {
-          fg0 = "#543A48", -- Default foreground
-          blue = "#2A6B9C", -- Subtle blue
+          fg0 = "#543A48",   -- Default foreground
+          blue = "#2A6B9C",  -- Subtle blue
           green = "#618062", -- Muted green
           black = "#000000", -- True black for a/z
         },
         nightfox = {
-          fg0 = "#CDCCC6", -- Default foreground
-          blue = "#5AB0F6", -- Soft blue
+          fg0 = "#CDCCC6",   -- Default foreground
+          blue = "#5AB0F6",  -- Soft blue
           green = "#9ECD9E", -- Soft green
           black = "#000000", -- True black for a/z
         },

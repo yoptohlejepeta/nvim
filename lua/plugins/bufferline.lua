@@ -9,17 +9,17 @@ return {
         options = {
           mode = "buffers",
           separator_style = "slant", -- Revert to original slant separators
-          diagnostics = "nvim_lsp", -- Keep diagnostics, but remove custom indicator
+          diagnostics = "nvim_lsp",  -- Keep diagnostics, but remove custom indicator
           show_close_icon = false,
-          show_buffer_close_icons = true,
+          show_buffer_close_icons = false,
           always_show_bufferline = false, -- Hide with one buffer
           offsets = {
             {
               filetype = "NvimTree",
-              text = nil,
+              text = "file explorer",
               highlight = "Directory",
               separator = true,
-              text_align = "left",
+              text_align = "center",
               padding = 0,
             },
           },
@@ -37,8 +37,8 @@ return {
 
         for _, buf in ipairs(buf_list) do
           if vim.api.nvim_buf_is_loaded(buf) and
-             vim.fn.getbufvar(buf, "&buftype") ~= "terminal" and
-             buf ~= current_buf then
+              vim.fn.getbufvar(buf, "&buftype") ~= "terminal" and
+              buf ~= current_buf then
             table.insert(loaded_bufs, buf)
           end
         end
@@ -50,9 +50,10 @@ return {
         vim.cmd("bdelete " .. current_buf)
       end
 
-      vim.keymap.set("n", "<leader>bn", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
+      vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next buffer" })
       vim.keymap.set("n", "<leader>bp", ":BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
       vim.keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>", { desc = "Pick buffer to close" })
+      vim.keymap.set("n", "<leader>bb", ":BufferLinePick<CR>", { desc = "Pick buffer" })
       vim.keymap.set("n", "<leader>bx", close_current_buffer, { desc = "Close current buffer" })
     end,
   },

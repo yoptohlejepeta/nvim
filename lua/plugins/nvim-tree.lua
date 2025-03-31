@@ -24,6 +24,12 @@ return {
             enable = true,
           },
           icons = {
+            glyphs = {
+              folder = {
+                default = "📁",
+                open = "📂",
+              }
+            },
             show = {
               file = true,
               folder = true,

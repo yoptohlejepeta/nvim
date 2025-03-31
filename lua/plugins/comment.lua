@@ -8,7 +8,7 @@ return {
         padding = true,
         sticky = true,
         toggler = {
-          line = "<leader>cc",
+          line = "<leader>/",
           block = "<leader>cb",
         },
         opleader = {
