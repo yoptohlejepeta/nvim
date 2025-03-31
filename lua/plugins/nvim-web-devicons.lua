@@ -26,6 +26,16 @@ return {
           color = "#3572A5",
           name = "Python",
         },
+        go = {
+          icon = "🐹",
+          color = "#00ADD8",
+          name = "Go",
+        },
+        rs = {
+          icon = "🦀",
+          color = "#dea584",
+          name = "Rust",
+        },
         js = {
           icon = "📜",
           color = "#f7df1e",
@@ -42,7 +52,7 @@ return {
           name = "Markdown",
         },
         json = {
-          icon = "🗂️",
+          icon = "{}",
           color = "#cbcb41",
           name = "Json",
         },
