@@ -11,6 +11,11 @@ return {
           color = "#8cc84b",
           name = "Toml",
         },
+        tex = {
+          icon = "📜",
+          color = "#3d6117",
+          name = "Tex",
+        },
         lua = {
           icon = "🌕",
           color = "#51a0cf",
