@@ -91,6 +91,11 @@ return {
           color = "#89e051",
           name = "Text",
         },
+        lock = {
+          icon = "🔒",
+          color = "#e7b658",
+          name = "Lock",
+        },
       },
     })
   end,

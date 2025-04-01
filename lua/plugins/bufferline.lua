@@ -16,7 +16,7 @@ return {
           offsets = {
             {
               filetype = "NvimTree",
-              text = "file explorer",
+              text = "🗃️ file explorer",
               highlight = "Directory",
               separator = true,
               text_align = "center",
@@ -54,7 +54,8 @@ return {
       vim.keymap.set("n", "<leader>bp", ":BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
       vim.keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>", { desc = "Pick buffer to close" })
       vim.keymap.set("n", "<leader>bb", ":BufferLinePick<CR>", { desc = "Pick buffer" })
-      vim.keymap.set("n", "<leader>bx", close_current_buffer, { desc = "Close current buffer" })
+      -- vim.keymap.set("n", "<leader>bx", close_current_buffer, { desc = "Close current buffer" })
+      vim.keymap.set("n", "<leader>x", close_current_buffer, { desc = "Close current buffer" })
     end,
   },
 }

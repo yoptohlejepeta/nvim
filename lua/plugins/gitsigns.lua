@@ -11,9 +11,9 @@ return {
           topdelete = { text = "‾" },
           changedelete = { text = "~" },
         },
-        signcolumn = false, -- Show signs in the gutter
-        numhl = false,     -- Don’t highlight line numbers
-        linehl = false,    -- Don’t highlight changed lines
+        signcolumn = true,          -- Show signs in the gutter
+        numhl = false,              -- Don’t highlight line numbers
+        linehl = false,             -- Don’t highlight changed lines
         current_line_blame = false, -- Enable with keymap if desired
       })
 

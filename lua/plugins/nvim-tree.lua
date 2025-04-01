@@ -28,6 +28,8 @@ return {
               folder = {
                 default = "📁",
                 open = "📂",
+                empty = "📁",
+                empty_open = "📂",
               }
             },
             show = {
@@ -43,8 +45,8 @@ return {
           special_files = {},
         },
         filters = {
-          dotfiles = true,
-          custom = { "^.git$", "^..$" },
+          dotfiles = false,
+          custom = { "^.git$" },
         },
         git = {
           enable = true,
