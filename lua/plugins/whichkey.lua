@@ -26,10 +26,6 @@ return {
         { "<leader>bp", desc = "Previous buffer",               mode = "n" },
         { "<leader>bd", desc = "Pick buffer to close",          mode = "n" },
         { "g",          group = "Goto",                         mode = "n" },
-        { "<S-Tab>",    desc = "Accept Copilot suggestion",     mode = "i" },
-        { "<M-n>",      desc = "Next Copilot suggestion",       mode = "i" },
-        { "<M-p>",      desc = "Previous Copilot suggestion",   mode = "i" },
-        { "<C-]>",      desc = "Dismiss Copilot suggestion",    mode = "i" },
       })
     end,
   },

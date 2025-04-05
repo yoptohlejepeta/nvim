@@ -97,6 +97,11 @@ return {
             colorscheme = "rose-pine-dawn",
             before = [[vim.o.background = "light"]],
           },
+          {
+            name = "Dracula",
+            colorscheme = "dracula",
+            before = [[vim.o.background = "dark"]],
+          },
         },
         livePreview = true,
       })

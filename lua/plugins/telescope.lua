@@ -25,7 +25,8 @@ return {
         pickers = {
           find_files = {
             hidden = true,
-            file_ignore_patterns = { "%.git/" },
+            no_ignore = true,
+            file_ignore_patterns = { "%.git/", "%.venv/", "__pycache__/", "node_modules/", "%.pytest_cache/" },
           },
         },
       })

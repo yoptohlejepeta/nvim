@@ -7,8 +7,8 @@ return {
       override = {
         -- By file extension
         toml = {
-          icon = "🛠️",
-          color = "#8cc84b",
+          icon = "🛠",
+          color = "#4F8CBA",
           name = "Toml",
         },
         tex = {
@@ -25,6 +25,12 @@ return {
           icon = "🐍",
           color = "#3572A5",
           name = "Python",
+        },
+        -- jupyter notebook
+        ipynb = {
+          icon = "🪐",
+          color = "#DA5B0C",
+          name = "JupyterNotebook",
         },
         go = {
           icon = "🐹",
@@ -86,8 +92,13 @@ return {
           color = "#2496ed",
           name = "Dockerfile",
         },
+        [".gitlab-ci.yml"] = {
+          icon = "🦊",
+          color = "#e24329",
+          name = "Gitlab",
+        },
         txt = {
-          icon = "✏️",
+          icon = "📝",
           color = "#89e051",
           name = "Text",
         },

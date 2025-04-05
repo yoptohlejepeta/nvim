@@ -16,7 +16,7 @@ return {
           offsets = {
             {
               filetype = "NvimTree",
-              text = "🗃️ file explorer",
+              text = "  explorer",
               highlight = "Directory",
               separator = true,
               text_align = "center",

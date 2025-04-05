@@ -35,8 +35,8 @@ return {
             show = {
               file = true,
               folder = true,
-              folder_arrow = false,
-              git = true,
+              folder_arrow = true,
+              git = false,
             },
             padding = " ",
           },
@@ -50,7 +50,7 @@ return {
         },
         git = {
           enable = true,
-          ignore = true,
+          ignore = false,
           timeout = 500,
         },
         actions = {

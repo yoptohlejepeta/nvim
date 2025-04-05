@@ -26,4 +26,9 @@ return {
     name = "rose-pine",
     lazy = false,
   },
+  -- Dracula
+  {
+    "Mofiqul/dracula.nvim",
+    lazy = false,
+  },
 }
