@@ -12,7 +12,7 @@ return {
           block = "<leader>cb",
         },
         opleader = {
-          line = "<leader>c",
+          line = "<leader>/",
           block = "<leader>cb",
         },
         extra = {

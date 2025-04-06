@@ -4,11 +4,12 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     config = function()
-      local function lsp_status()
-        local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-        if #clients == 0 then return " No LSP" end
-        return " " .. table.concat(vim.tbl_map(function(c) return c.name end, clients), ", ")
-      end
+      -- function for showing lsp
+      -- local function lsp_status()
+      --   local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+      --   if #clients == 0 then return " No LSP" end
+      --   return " " .. table.concat(vim.tbl_map(function(c) return c.name end, clients), ", ")
+      -- end
 
       local function current_function()
         if not pcall(vim.treesitter.get_node) then return "" end
@@ -41,7 +42,7 @@ return {
             current_function,
           },
           lualine_x = {
-            lsp_status,
+            -- lsp_status,
             { "filetype", icon = { align = "right" } },
           },
           lualine_y = {
