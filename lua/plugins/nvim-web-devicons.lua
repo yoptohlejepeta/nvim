@@ -57,6 +57,14 @@ return {
           color = "#ffffff",
           name = "Markdown",
         },
+        png = {
+          icon = "📷",
+          name = "Png"
+        },
+        pdf = {
+          icon = "📕",
+          name = "PDF"
+        },
         json = {
           icon = "{}",
           color = "#cbcb41",
