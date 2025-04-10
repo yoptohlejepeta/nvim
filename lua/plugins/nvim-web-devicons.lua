@@ -7,7 +7,7 @@ return {
       override = {
         -- By file extension
         toml = {
-          icon = "🛠",
+          icon = "🛠️",
           color = "#4F8CBA",
           name = "Toml",
         },
@@ -58,7 +58,7 @@ return {
           name = "Markdown",
         },
         png = {
-          icon = "📷",
+          icon = "🖼️",
           name = "Png"
         },
         pdf = {

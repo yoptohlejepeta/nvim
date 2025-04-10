@@ -16,20 +16,7 @@ return {
             colorscheme = "duskfox",
             before = [[vim.o.background = "dark"]],
           },
-          {
-            name = "Nightfox Dayfox",
-            colorscheme = "dayfox",
-            before = [[vim.o.background = "light"]],
-          },
           -- Catppuccin Themes
-          {
-            name = "Catppuccin Latte",
-            colorscheme = "catppuccin",
-            before = [[
-              require("catppuccin").setup({ flavour = "latte" })
-              vim.o.background = "light"
-            ]],
-          },
           {
             name = "Catppuccin Frappe",
             colorscheme = "catppuccin",
@@ -60,11 +47,6 @@ return {
             colorscheme = "gruvbox",
             before = [[vim.o.background = "dark"]],
           },
-          {
-            name = "Gruvbox Light",
-            colorscheme = "gruvbox",
-            before = [[vim.o.background = "light"]],
-          },
           -- TokyoNight Themes
           {
             name = "TokyoNight Storm",
@@ -93,8 +75,47 @@ return {
             before = [[vim.o.background = "dark"]],
           },
           {
+            name = "Kanagawa Wave",
+            colorscheme = "kanagawa-wave",
+            before = [[vim.o.background = "dark"]]
+          },
+          {
+            name = "Kanagawa Dragon",
+            colorscheme = "kanagawa-dragon",
+            before = [[vim.o.background = "dark"]]
+          },
+          -- light themes
+          {
+            name = "Dayfox",
+            colorscheme = "dayfox",
+            before = [[vim.o.background = "light"]],
+          },
+          {
+            name = "Gruvbox Light",
+            colorscheme = "gruvbox",
+            before = [[vim.o.background = "light"]],
+          },
+          {
+            name = "Catppuccin Latte",
+            colorscheme = "catppuccin",
+            before = [[
+              require("catppuccin").setup({ flavour = "latte" })
+              vim.o.background = "light"
+            ]],
+          },
+          {
+            name = "Kanagawa Lotus",
+            colorscheme = "kanagawa-lotus",
+            before = [[vim.o.background = "light"]]
+          },
+          {
             name = "Rose Pine Dawn",
             colorscheme = "rose-pine-dawn",
+            before = [[vim.o.background = "light"]],
+          },
+          {
+            name = "TokyoNight Day",
+            colorscheme = "tokyonight-day",
             before = [[vim.o.background = "light"]],
           },
         },

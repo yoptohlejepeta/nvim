@@ -14,18 +14,13 @@ return {
       })
 
       wk.add({
-        { "<leader>f", group = "Find (Snacks)",  mode = "n" },
+        { "<leader>f", group = "Files",  mode = "n" },
         {
           "<leader>ff",
           desc = "Find files",
           mode = "n",
           callback = function()
-            local current_file = vim.fn.expand("%:p")
-            local cwd = vim.fn.fnamemodify(current_file, ":h")
-            if cwd == "" or cwd == "." then
-              cwd = vim.fn.getcwd()
-            end
-            require("snacks.picker").files({ cwd = cwd })
+            require("snacks.picker").files({ hidden = true })
           end,
         },
         {
@@ -33,12 +28,7 @@ return {
           desc = "Live grep",
           mode = "n",
           callback = function()
-            local current_file = vim.fn.expand("%:p")
-            local cwd = vim.fn.fnamemodify(current_file, ":h")
-            if cwd == "" or cwd == "." then
-              cwd = vim.fn.getcwd()
-            end
-            require("snacks.picker").grep({ cwd = cwd })
+            require("snacks.picker").grep({ hidden = true })
           end,
         },
         {

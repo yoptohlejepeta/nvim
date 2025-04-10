@@ -26,4 +26,8 @@ return {
     name = "rose-pine",
     lazy = false,
   },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false
+  }
 }
