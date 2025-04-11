@@ -29,5 +29,11 @@ return {
   {
     "rebelot/kanagawa.nvim",
     lazy = false
+  },
+  {
+    "2nthony/vitesse.nvim",
+    dependencies = {
+      "tjdevries/colorbuddy.nvim"
+    },
   }
 }

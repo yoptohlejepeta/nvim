@@ -84,6 +84,10 @@ return {
             colorscheme = "kanagawa-dragon",
             before = [[vim.o.background = "dark"]]
           },
+          {
+            name = "vitesse",
+            colorscheme = "vitesse"
+          },
           -- light themes
           {
             name = "Dayfox",
