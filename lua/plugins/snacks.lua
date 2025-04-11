@@ -39,7 +39,18 @@ return {
       picker = {
         prompt = "👉 ",
         enabled = true,
+        icons = {
+          files = {
+            dir = "📁",
+            dir_open = "📂",
+            file = "📄"
+          }
+        },
         sources = {
+          files = {
+            -- hidden = ,
+            ignored = false,
+          },
           explorer = {
             follow_file = true,
             tree = true,              -- Show the file tree
@@ -50,6 +61,7 @@ return {
             diagnostics_open = false, -- Don’t show recursive diagnostics for open directories
             watch = true,             -- Watch for file changes
             jump = { close = true },
+            hidden = true,
             layout = {
               preset = "sidebar",
               preview = false,
@@ -58,6 +70,11 @@ return {
                 width = 0.2,
               }
             },
+            ignore = {
+              git_ignored = false,
+              patterns = { ".git" }
+            },
+            include = { ".env" },
             formatters = {
               -- file = { filename_only = true }, -- Show only filenames
               severity = { pos = "right" }, -- Show severity on the right
@@ -67,7 +84,7 @@ return {
       },
       dashboard = {
         enabled = true,
-        example = "compact_files",
+        example = "doom",
         preset = {
           header = "",
         },

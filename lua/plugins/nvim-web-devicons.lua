@@ -16,6 +16,9 @@ return {
           color = "#3d6117",
           name = "Tex",
         },
+        typ = {
+          icon = "🖋️"
+        },
         lua = {
           icon = "🌕",
           color = "#51a0cf",
@@ -43,7 +46,7 @@ return {
           name = "Rust",
         },
         js = {
-          icon = "📜",
+          icon = "📒",
           color = "#f7df1e",
           name = "JavaScript",
         },

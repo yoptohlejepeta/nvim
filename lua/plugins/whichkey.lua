@@ -8,16 +8,20 @@ return {
         plugins = {
           spelling = { enabled = true },
         },
+        preset = "helix",
         win = {
           border = "single",
         },
       })
 
       wk.add({
-        { "<leader>f", group = "Files",  mode = "n" },
+        { "<leader>w",      hidden = true },
+        { "<leader>q",      hidden = true },
+        { "<leader>f",      group = "files", mode = "n" },
+        { "<localleader>l", group = "latex", mode = "n" },
         {
           "<leader>ff",
-          desc = "Find files",
+          desc = "find files",
           mode = "n",
           callback = function()
             require("snacks.picker").files({ hidden = true })
@@ -25,7 +29,7 @@ return {
         },
         {
           "<leader>fg",
-          desc = "Live grep",
+          desc = "live grep",
           mode = "n",
           callback = function()
             require("snacks.picker").grep({ hidden = true })
@@ -33,7 +37,7 @@ return {
         },
         {
           "<leader>fb",
-          desc = "Buffers",
+          desc = "buffers",
           mode = "n",
           callback = function()
             require("snacks.picker").buffers()
@@ -55,10 +59,16 @@ return {
             require("snacks.bufdelete").delete()
           end
         },
-        { "<leader>g", group = "Git (Gitsigns)", mode = "n" },
-        { "<leader>c", group = "Comment",        mode = "n" },
-        { "<leader>t", group = "Theme",          mode = "n" },
-        { "<leader>t", group = "Todo",           mode = "n" },
+        { "<leader>g", group = "git",         mode = "n" },
+        {
+          "<leader>gc",
+          callback = function()
+            require("snacks.picker").git_branches()
+          end,
+          desc = "git branches"
+        },
+        { "<leader>c", group = "comment",     mode = "n" },
+        { "<leader>t", group = "todo/themes", mode = "n" },
         {
           "<leader>e",
           desc = "Toggle file explorer",
@@ -75,11 +85,21 @@ return {
             require("snacks.picker").explorer({ follow_file = true })
           end,
         },
-        { "<leader>b",  group = "Buffer",              mode = "n" },
-        { "<leader>bn", desc = "Next buffer",          mode = "n" },
-        { "<leader>bp", desc = "Previous buffer",      mode = "n" },
-        { "<leader>bd", desc = "Pick buffer to close", mode = "n" },
-        { "g",          group = "Goto",                mode = "n" },
+        { "<leader>b", group = "Buffer",      mode = "n" },
+        { "g",         group = "Goto",        mode = "n" },
+        { "<leader>d", group = "diagnostics", mode = "n" },
+        {
+          "<localleader>c",
+          desc = "csv toggle",
+          mode = "n",
+          callback = function()
+            require("csvview").toggle()
+          end
+        },
+        { "<localleader>t",  group = "typst",                  desc = "typst preview",        mode = "n" },
+        { "<localleader>tl", "<cmd>TypstPreviewToggle<CR>",    desc = "live preview browser", mode = "n" },
+        { "<localleader>tp", "<cmd>TypstWatch<CR>",            desc = "preview pdf",          mode = "n" },
+        { "<localleader>m",  "<cmd>MarkdownPreviewToggle<CR>", desc = "preview markdown",     mode = "n" }
       })
     end,
   },
