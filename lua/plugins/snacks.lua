@@ -8,11 +8,10 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-      toggle = { enabled = true, which_key = true, map = vim.keymap.set, notify = true },
+      toggle = { which_key = true, map = vim.keymap.set, notify = true },
       bigfile = { enabled = true },
       bufdelete = { enabled = true },
       image = {
-        enabled = true,
         formats = {
           "svg",
           "png",
@@ -34,11 +33,9 @@ return {
       },
       explorer = {
         replace_netrw = true,
-        enabled = true,
       },
       picker = {
         prompt = "👉 ",
-        enabled = true,
         icons = {
           files = {
             dir = "📁",
@@ -75,6 +72,7 @@ return {
               patterns = { ".git" }
             },
             include = { ".env" },
+            exclude = { ".venv" },
             formatters = {
               -- file = { filename_only = true }, -- Show only filenames
               severity = { pos = "right" }, -- Show severity on the right
@@ -83,7 +81,6 @@ return {
         },
       },
       dashboard = {
-        enabled = true,
         example = "doom",
         preset = {
           header = "",

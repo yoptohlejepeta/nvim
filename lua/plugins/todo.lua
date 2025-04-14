@@ -12,6 +12,7 @@ return {
         PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
         TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        -- TODO: add FIX keyword
       },
       colors = {
         error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
@@ -35,12 +36,6 @@ return {
     },
     config = function(_, opts)
       require("todo-comments").setup(opts)
-      vim.keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<CR>",
-        { desc = "Search through all project todos with Telescope." })
-      vim.keymap.set("n", "<leader>tl", "<cmd>TodoLocList<CR>",
-        { desc = "This uses the location list to show all todos in your project." })
-      vim.keymap.set("n", "<leader>tq", "<cmd>TodoLocList<CR>",
-        { desc = "This uses the quickfix list to show all todos in your project." })
       vim.keymap.set("n", "]t", require("todo-comments").jump_next, { desc = "Next TODO" })
       vim.keymap.set("n", "[t", require("todo-comments").jump_prev, { desc = "Previous TODO" })
     end,

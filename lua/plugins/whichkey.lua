@@ -37,7 +37,7 @@ return {
         },
         {
           "<leader>fb",
-          desc = "buffers",
+          desc = "find buffers",
           mode = "n",
           callback = function()
             require("snacks.picker").buffers()
@@ -45,11 +45,27 @@ return {
         },
         {
           "<leader>fh",
-          desc = "Help tags",
+          desc = "help tags",
           mode = "n",
           callback = function()
             require("snacks.picker").help()
           end,
+        },
+        {
+          "<leader>fl",
+          desc = "find lines",
+          mode = "n",
+          callback = function()
+            require("snacks.picker").lines()
+          end
+        },
+        {
+          "<leader>ft",
+          desc = "find todos",
+          mode = "n",
+          callback = function()
+            require("snacks.picker").todo_comments()
+          end
         },
         {
           "<leader>x",
@@ -96,10 +112,10 @@ return {
             require("csvview").toggle()
           end
         },
-        { "<localleader>t",  group = "typst",                  desc = "typst preview",        mode = "n" },
-        { "<localleader>tl", "<cmd>TypstPreviewToggle<CR>",    desc = "live preview browser", mode = "n" },
-        { "<localleader>tp", "<cmd>TypstWatch<CR>",            desc = "preview pdf",          mode = "n" },
-        { "<localleader>m",  "<cmd>MarkdownPreviewToggle<CR>", desc = "preview markdown",     mode = "n" }
+        { "<localleader>t",  group = "typst",                  desc = "typst preview",         mode = "n" },
+        { "<localleader>tl", "<cmd>TypstPreviewToggle<CR>",    desc = "live preview (toggle)", mode = "n" },
+        { "<localleader>tp", "<cmd>TypstWatch<CR>",            desc = "preview pdf",           mode = "n" },
+        { "<localleader>m",  "<cmd>MarkdownPreviewToggle<CR>", desc = "preview markdown",      mode = "n" },
       })
     end,
   },
