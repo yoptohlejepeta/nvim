@@ -39,11 +39,10 @@ return {
           },
         }
       elseif server == "tinymist" then
-        opts = { offset_encoding = "utf-8"}
+        opts = { offset_encoding = "utf-8" }
         opts.settings = {
-          exportPdf = "onType",                     -- Export PDF on every change
-          outputPath = "$root/target/$dir/$name",   -- Output PDF to target/ directory
-          formatterMode = "typstyle",               -- Use typstyle for formatting
+          exportPdf = "onType",
+          formatterMode = "typstyle",
         }
       end
       lspconfig[server].setup(opts)
