@@ -1,8 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
     "L3MON4D3/LuaSnip",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -10,8 +8,11 @@ return {
     "kaarmu/typst.vim",
   },
   config = function()
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    vim.lsp.inlay_hint.enable(true)
+
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
     local lspconfig = require("lspconfig")
+
     local servers = {
       "rust_analyzer",
       "gopls",
@@ -23,19 +24,16 @@ return {
       "html",
       "cssls",
       "tinymist",
+      "zls"
     }
 
     for _, server in ipairs(servers) do
       local opts = { capabilities = capabilities }
+
       if server == "lua_ls" then
         opts.settings = {
-          Lua = { diagnostics = { globals = { "vim" } } },
-        }
-      elseif server == "pyright" then
-        opts.settings = {
-          python = {
-            analysis = { typeCheckingMode = "basic", diagnosticMode = "workspace" },
-            pythonPath = vim.fn.getcwd() .. "/.venv/bin/python",
+          Lua = {
+            diagnostics = { globals = { "vim" } },
           },
         }
       elseif server == "tinymist" then
@@ -45,6 +43,7 @@ return {
           formatterMode = "typstyle",
         }
       end
+
       lspconfig[server].setup(opts)
     end
 
@@ -55,21 +54,11 @@ return {
       severity_sort = true,
     })
 
-    local cmp = require("cmp")
-    cmp.setup({
-      snippet = {
-        expand = function(args) require("luasnip").lsp_expand(args.body) end,
-      },
-      mapping = cmp.mapping.preset.insert({
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-      }),
-      sources = { { name = "nvim_lsp" }, { name = "luasnip" } },
-    })
-
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
     vim.keymap.set("n", "gb", "<C-o>", { desc = "Go Back from Definition" })
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Documentation" })
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
   end,
 }

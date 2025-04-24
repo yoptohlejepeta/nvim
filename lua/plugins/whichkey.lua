@@ -15,16 +15,16 @@ return {
       })
 
       wk.add({
-        { "<leader>w",      hidden = true },
-        { "<leader>q",      hidden = true },
-        { "<leader>f",      group = "files", mode = "n" },
+        { "<leader>w", hidden = true },
+        { "<leader>q", hidden = true },
+        { "<leader>f", group = "find", mode = "n", icon = "󰍉 " },
         { "<localleader>l", group = "latex", mode = "n" },
         {
           "<leader>ff",
-          desc = "find files",
+          desc = "files",
           mode = "n",
           callback = function()
-            require("snacks.picker").files({ hidden = true })
+            require("snacks.picker").files()
           end,
         },
         {
@@ -37,7 +37,7 @@ return {
         },
         {
           "<leader>fb",
-          desc = "find buffers",
+          desc = "buffers",
           mode = "n",
           callback = function()
             require("snacks.picker").buffers()
@@ -53,7 +53,7 @@ return {
         },
         {
           "<leader>fl",
-          desc = "find lines",
+          desc = "lines",
           mode = "n",
           callback = function()
             require("snacks.picker").lines()
@@ -61,10 +61,18 @@ return {
         },
         {
           "<leader>ft",
-          desc = "find todos",
+          desc = "todos",
           mode = "n",
           callback = function()
             require("snacks.picker").todo_comments()
+          end
+        },
+        {
+          "<leader>fs",
+          desc = "lsp symbols",
+          mode = "n",
+          callback = function()
+            require("snacks.picker").lsp_symbols()
           end
         },
         {
@@ -75,7 +83,7 @@ return {
             require("snacks.bufdelete").delete()
           end
         },
-        { "<leader>g", group = "git",         mode = "n" },
+        { "<leader>g", group = "git", mode = "n" },
         {
           "<leader>gc",
           callback = function()
@@ -83,8 +91,8 @@ return {
           end,
           desc = "git branches"
         },
-        { "<leader>c", group = "comment",     mode = "n" },
-        { "<leader>t", group = "todo/themes", mode = "n" },
+        { "<leader>c", group = "comment", mode = "n", icon = " " },
+        { "<leader>t", group = "todo", mode = "n", icon = " " },
         {
           "<leader>e",
           desc = "Toggle file explorer",
@@ -101,8 +109,16 @@ return {
             require("snacks.picker").explorer({ follow_file = true })
           end,
         },
-        { "<leader>b", group = "Buffer",      mode = "n" },
-        { "g",         group = "Goto",        mode = "n" },
+        { "<leader>b", group = "Buffer", mode = "n" },
+        { "g",         group = "Goto",   mode = "n" },
+        {
+          "gr",
+          callback = function()
+            require("snacks.picker").lsp_references()
+          end,
+          nowait = true,
+          desc = "references"
+        },
         { "<leader>d", group = "diagnostics", mode = "n" },
         {
           "<localleader>c",
@@ -110,12 +126,14 @@ return {
           mode = "n",
           callback = function()
             require("csvview").toggle()
-          end
+          end,
+          icon = " ",
         },
-        { "<localleader>t",  group = "typst",                  desc = "typst preview",         mode = "n" },
-        { "<localleader>tl", "<cmd>TypstPreviewToggle<CR>",    desc = "live preview (toggle)", mode = "n" },
-        { "<localleader>tp", "<cmd>TypstWatch<CR>",            desc = "preview pdf",           mode = "n" },
-        { "<localleader>m",  "<cmd>MarkdownPreviewToggle<CR>", desc = "preview markdown",      mode = "n" },
+        { "<localleader>l", group = "latex", mode = "n", icon = " " },
+        { "<localleader>t", group = "typst", desc = "typst preview", mode = "n", icon = " " },
+        { "<localleader>tl", "<cmd>TypstPreviewToggle<CR>", desc = "live preview (toggle)", mode = "n" },
+        { "<localleader>tp", "<cmd>TypstWatch<CR>", desc = "preview pdf", mode = "n" },
+        { "<localleader>m", "<cmd>MarkdownPreviewToggle<CR>", desc = "preview markdown", mode = "n", icon = " " },
       })
     end,
   },

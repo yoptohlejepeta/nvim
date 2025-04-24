@@ -13,50 +13,48 @@ return {
       bufdelete = { enabled = true },
       image = {
         formats = {
-          "svg",
-          "png",
-          "jpg",
-          "jpeg",
-          "gif",
-          "bmp",
-          "webp",
-          "tiff",
-          "heic",
-          "avif",
-          "mp4",
-          "mov",
-          "avi",
-          "mkv",
-          "webm",
-          "pdf",
+          "svg", "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff",
+          "heic", "avif", "mp4", "mov", "avi", "mkv", "webm", "pdf",
         },
       },
       explorer = {
         replace_netrw = true,
+        sources = {
+          files = {
+            hidden = true,                                 -- Show hidden files in explorer
+            ignored = true,                                -- Show git-ignored files in explorer
+            include = { ".env" },                          -- Explicitly include .env files
+            exclude = { ".venv", "venv", "node_modules" }, -- Explicitly exclude .venv directory
+          },
+        },
       },
       picker = {
-        prompt = "👉 ",
         icons = {
           files = {
-            dir = "📁",
-            dir_open = "📂",
-            file = "📄"
+            dir = "📁 ",
+            dir_open = "📂 ",
           }
         },
         sources = {
           files = {
-            -- hidden = ,
-            ignored = false,
+            hidden = true,
+            ignored = true,
+            ignore = {
+              git_ignored = true,
+              patterns = { ".venv", ".git" },
+            },
+            include = { ".env" },
+            exclude = { ".venv", "venv", "node_modules" },
           },
           explorer = {
             follow_file = true,
-            tree = true,              -- Show the file tree
-            git_status = true,        -- Show git status
-            git_status_open = false,  -- Don’t show recursive git status for open directories
-            git_untracked = true,     -- Show untracked files
-            diagnostics = true,       -- Show diagnostics
-            diagnostics_open = false, -- Don’t show recursive diagnostics for open directories
-            watch = true,             -- Watch for file changes
+            tree = true,
+            git_status = true,
+            git_status_open = false,
+            git_untracked = true,
+            diagnostics = true,
+            diagnostics_open = false,
+            watch = true,
             jump = { close = true },
             hidden = true,
             layout = {
@@ -74,8 +72,7 @@ return {
             include = { ".env" },
             exclude = { ".venv" },
             formatters = {
-              -- file = { filename_only = true }, -- Show only filenames
-              severity = { pos = "right" }, -- Show severity on the right
+              severity = { pos = "right" },
             },
           },
         },

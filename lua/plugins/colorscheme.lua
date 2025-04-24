@@ -1,26 +1,43 @@
 return {
-  -- Nightfox (if not already installed)
   {
     "EdenEast/nightfox.nvim",
-    lazy = false, -- Load immediately to ensure availability for Themery
-  },
-  -- Catppuccin
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
     lazy = false,
   },
-  -- TokyoNight
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    config = function()
+      require("catppuccin").setup({
+        styles = {
+          comments = { "italic" },
+        },
+      })
+    end
+  },
   {
     "folke/tokyonight.nvim",
     lazy = false,
   },
   {
-    "everviolet/nvim",
-    lazy=false,
+    "yoptohlejepeta/vim-dogrun",
+    lazy = false,
   },
   {
-    "yoptohlejepeta/vim-dogrun",
-    lazy=false,
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    opts = {
+      colors = {
+        pallete = {
+          -- carpYellow = "#e5c890"
+        },
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none"
+            }
+          }
+        }
+      }
+    },
   },
 }

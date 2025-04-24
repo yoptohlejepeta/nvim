@@ -33,7 +33,7 @@ return {
             { "mode" },
           },
           lualine_b = {
-            { "branch", icon = "🌿" },
+            { "branch", icon = " " },
             { "diff", symbols = { added = " ", modified = " ", removed = " " } },
             { "diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " } },
           },
@@ -42,7 +42,6 @@ return {
             current_function,
           },
           lualine_x = {
-            -- lsp_status,
             { "filetype", icon = { align = "right" } },
           },
           lualine_y = {

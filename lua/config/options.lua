@@ -11,6 +11,3 @@ vim.opt.wrap = false
 
 vim.opt.fillchars:append { eob = " " }
 vim.opt.clipboard = "unnamedplus"
-
-vim.g.vimtex_quickfix_mode = 0
-vim.g.vimtex_imaps_enabled = 1

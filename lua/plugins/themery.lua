@@ -41,11 +41,6 @@ return {
               vim.o.background = "dark"
             ]],
           },
-          {
-            name = "Everviolet",
-            colorscheme = "evergarden",
-            before = [[vim.o.background = "dark"]],
-          },
           -- TokyoNight Themes
           {
             name = "TokyoNight Storm",
@@ -65,6 +60,11 @@ return {
           {
             name = "dogrun",
             colorscheme = "dogrun",
+            before = [[vim.o.background = "dark"]],
+          },
+          {
+            name = "kanagawa",
+            colorscheme = "kanagawa-wave",
             before = [[vim.o.background = "dark"]],
           },
           -- light themes
