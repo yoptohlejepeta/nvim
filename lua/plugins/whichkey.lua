@@ -17,7 +17,7 @@ return {
       wk.add({
         { "<leader>w", hidden = true },
         { "<leader>q", hidden = true },
-        { "<leader>f", group = "find", mode = "n", icon = "󰍉 " },
+        { "<leader>f", group = "find", mode = "n", icon = { icon = " ", color = "white" } },
         { "<localleader>l", group = "latex", mode = "n" },
         {
           "<leader>ff",
@@ -91,8 +91,8 @@ return {
           end,
           desc = "git branches"
         },
-        { "<leader>c", group = "comment", mode = "n", icon = " " },
-        { "<leader>t", group = "todo", mode = "n", icon = " " },
+        { "<leader>c", group = "comment", mode = "n", icon = { icon = " ", color = "green" } },
+        { "<leader>t", group = "theme", mode = "n", icon = { icon = " ", color = "white" } },
         {
           "<leader>e",
           desc = "Toggle file explorer",
@@ -127,13 +127,19 @@ return {
           callback = function()
             require("csvview").toggle()
           end,
-          icon = " ",
+          icon = { icon = " ", color = "green" },
         },
-        { "<localleader>l", group = "latex", mode = "n", icon = " " },
-        { "<localleader>t", group = "typst", desc = "typst preview", mode = "n", icon = " " },
+        { "<localleader>l", group = "latex", mode = "n", icon = { icon = " ", color = "green" } },
+        { "<localleader>t", group = "typst", desc = "typst preview", mode = "n", icon = { icon = " ", color = "brown" } },
         { "<localleader>tl", "<cmd>TypstPreviewToggle<CR>", desc = "live preview (toggle)", mode = "n" },
         { "<localleader>tp", "<cmd>TypstWatch<CR>", desc = "preview pdf", mode = "n" },
-        { "<localleader>m", "<cmd>MarkdownPreviewToggle<CR>", desc = "preview markdown", mode = "n", icon = " " },
+        {
+          "<localleader>m",
+          "<cmd>MarkdownPreviewToggle<CR>",
+          desc = "preview markdown",
+          mode = "n",
+          icon = { icon = " ", color = "white" }
+        },
       })
     end,
   },
