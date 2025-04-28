@@ -25,8 +25,6 @@ return {
             fallbacks = { "snippets", "buffer" },
             score_offset = 25,
             opts = {
-              trailing_slash = false,
-              label_trailing_slash = true,
               show_hidden_files_by_default = true,
             },
           },

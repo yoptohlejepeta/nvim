@@ -91,7 +91,7 @@ return {
           end,
           desc = "git branches"
         },
-        { "<leader>c", group = "comment", mode = "n", icon = { icon = " ", color = "green" } },
+        { "<leader>c", group = "comment/code action", mode = "n", icon = { icon = " ", color = "green" } },
         { "<leader>t", group = "theme", mode = "n", icon = { icon = " ", color = "white" } },
         {
           "<leader>e",
@@ -118,6 +118,14 @@ return {
           end,
           nowait = true,
           desc = "references"
+        },
+        {
+          "gh",
+          callback = function ()
+            require("snacks").dashboard({example = "compact_files"})
+          end,
+          desc = "home (dashboard)",
+          icon = {icon = " ", color = "white"}
         },
         { "<leader>d", group = "diagnostics", mode = "n" },
         {

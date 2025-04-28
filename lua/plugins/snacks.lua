@@ -78,7 +78,7 @@ return {
         },
       },
       dashboard = {
-        example = "doom",
+        example = "compact_files",
         preset = {
           header = "",
         },
