@@ -36,6 +36,16 @@ return {
             diagnostics = { globals = { "vim" } },
           },
         }
+      elseif server == "gopls" then
+        opts.settings = {
+          gopls = {
+            ["ui.inlayhints.hints"] = {
+              compositeLiteralFields = true,
+              constantValues = true,
+              parameterNames = true
+            }
+          }
+        }
       elseif server == "tinymist" then
         opts = { offset_encoding = "utf-8" }
         opts.settings = {
