@@ -18,13 +18,16 @@ return {
       "gopls",
       "julials",
       "lua_ls",
-      "pyright",
+      -- "pyright", -- basedpyright
+      "basedpyright",
       "ruff",
       "texlab",
       "html",
       "cssls",
       "tinymist",
-      "zls"
+      "zls",
+      "dockerls",
+      "docker_compose_language_service" -- FIX:
     }
 
     for _, server in ipairs(servers) do
@@ -43,6 +46,20 @@ return {
               compositeLiteralFields = true,
               constantValues = true,
               parameterNames = true
+            }
+          }
+        }
+      elseif server == "basedpyright" then
+        opts.settings = {
+          basedpyright = {
+            analysis = {
+              inlayHints = {
+                variableTypes = false,
+              },
+              diagnosticSeverityOverrides = {
+                reportAny = false,
+                reportUnknownVariableType = false
+              }
             }
           }
         }
