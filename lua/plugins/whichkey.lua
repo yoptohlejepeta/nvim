@@ -154,7 +154,7 @@ return {
         {
           "<leader>fd",
           function()
-            require("snacks.picker").diagnostics()
+            require("snacks.picker").diagnostics_buffer()
           end,
           desc = "search diagnostics",
           icon = { icon = "󰛯 ", color = "white" }
