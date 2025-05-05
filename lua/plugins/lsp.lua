@@ -18,8 +18,8 @@ return {
       "gopls",
       "julials",
       "lua_ls",
-      -- "pyright", -- basedpyright
-      "basedpyright",
+      "pyright",
+      -- "basedpyright",
       "ruff",
       "texlab",
       "html",
@@ -49,20 +49,20 @@ return {
             }
           }
         }
-      elseif server == "basedpyright" then
-        opts.settings = {
-          basedpyright = {
-            analysis = {
-              inlayHints = {
-                variableTypes = false,
-              },
-              diagnosticSeverityOverrides = {
-                reportAny = false,
-                reportUnknownVariableType = false
-              }
-            }
-          }
-        }
+      -- elseif server == "basedpyright" then
+      --   opts.settings = {
+      --     basedpyright = {
+      --       analysis = {
+      --         inlayHints = {
+      --           variableTypes = false,
+      --         },
+      --         diagnosticSeverityOverrides = {
+      --           reportAny = false,
+      --           reportUnknownVariableType = false
+      --         }
+      --       }
+      --     }
+      --   }
       elseif server == "tinymist" then
         opts = { offset_encoding = "utf-8" }
         opts.settings = {

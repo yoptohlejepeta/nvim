@@ -29,12 +29,6 @@ return {
         },
       },
       picker = {
-        icons = {
-          files = {
-            dir = "📁 ",
-            dir_open = "📂 ",
-          }
-        },
         sources = {
           files = {
             hidden = true,

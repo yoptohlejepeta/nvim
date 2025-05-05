@@ -18,7 +18,6 @@ return {
         { "<leader>w", hidden = true },
         { "<leader>q", hidden = true },
         { "<leader>f", group = "find", mode = "n", icon = { icon = " ", color = "white" } },
-        { "<localleader>l", group = "latex", mode = "n" },
         {
           "<leader>ff",
           desc = "files",
@@ -112,7 +111,7 @@ return {
         { "<leader>b", group = "Buffer", mode = "n" },
         { "g",         group = "Goto",   mode = "n" },
         {
-          "gr",
+          "grr",
           callback = function()
             require("snacks.picker").lsp_references()
           end,
@@ -121,11 +120,11 @@ return {
         },
         {
           "gh",
-          callback = function ()
-            require("snacks").dashboard({example = "compact_files"})
+          callback = function()
+            require("snacks").dashboard({ example = "compact_files" })
           end,
           desc = "home (dashboard)",
-          icon = {icon = " ", color = "white"}
+          icon = { icon = " ", color = "white" }
         },
         { "<leader>d", group = "diagnostics", mode = "n" },
         {
@@ -148,6 +147,15 @@ return {
           mode = "n",
           icon = { icon = " ", color = "white" }
         },
+        {
+          "<leader>.", function() require("snacks").scratch() end, desc = "Toggle Scratch Buffer"
+        },
+        { "<leader>S", function() require("snacks.scratch").select() end, desc = "Select Scratch Buffer" },
+        { "<leader>fd", function ()
+          require("snacks.picker").diagnostics()
+        end,
+          desc = "search diagnostics"
+        }
       })
     end,
   },

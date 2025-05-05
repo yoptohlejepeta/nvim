@@ -23,13 +23,12 @@ return {
           "gopls",
           "julials",
           "lua_ls",
-          "pyright",
+          "basedpyright",
           "ruff",
           "texlab",
           "html",
           "cssls",
           "ts_ls",
-          "volar"
         },
         automatic_installation = true,
       })
