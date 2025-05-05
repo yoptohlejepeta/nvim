@@ -151,10 +151,13 @@ return {
           "<leader>.", function() require("snacks").scratch() end, desc = "Toggle Scratch Buffer"
         },
         { "<leader>S", function() require("snacks.scratch").select() end, desc = "Select Scratch Buffer" },
-        { "<leader>fd", function ()
-          require("snacks.picker").diagnostics()
-        end,
-          desc = "search diagnostics"
+        {
+          "<leader>fd",
+          function()
+            require("snacks.picker").diagnostics()
+          end,
+          desc = "search diagnostics",
+          icon = { icon = "󰛯 ", color = "white" }
         }
       })
     end,
