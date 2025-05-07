@@ -43,10 +43,10 @@ return {
         },
       }
       opts.keymap = {
-        ["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
-        ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
+        -- ["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
+        -- ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
         ["<C-Space>"] = { "show" },
-        ["<S-CR>"] = { "accept" },
+        ["<Tab>"] = { "accept" },
         ["<C-e>"] = { "hide", "fallback" },
         ["<C-s>"] = {
           function()

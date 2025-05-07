@@ -36,7 +36,7 @@ return {
       if server == "lua_ls" then
         opts.settings = {
           Lua = {
-            diagnostics = { globals = { "vim" } },
+            diagnostics = { globals = { "vim" , "Snacks"} },
           },
         }
       elseif server == "gopls" then

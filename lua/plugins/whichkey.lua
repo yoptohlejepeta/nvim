@@ -13,6 +13,7 @@ return {
           border = "single",
         },
       })
+      local snacks = require("snacks")
 
       wk.add({
         { "<leader>w", hidden = true },
@@ -23,7 +24,7 @@ return {
           desc = "files",
           mode = "n",
           callback = function()
-            require("snacks.picker").files()
+            snacks.picker.files()
           end,
         },
         {
@@ -31,7 +32,7 @@ return {
           desc = "live grep",
           mode = "n",
           callback = function()
-            require("snacks.picker").grep({ hidden = true })
+            snacks.picker.grep({ hidden = true })
           end,
         },
         {
@@ -39,7 +40,7 @@ return {
           desc = "buffers",
           mode = "n",
           callback = function()
-            require("snacks.picker").buffers()
+            snacks.picker.buffers()
           end,
         },
         {
@@ -47,7 +48,7 @@ return {
           desc = "help tags",
           mode = "n",
           callback = function()
-            require("snacks.picker").help()
+            snacks.picker.help()
           end,
         },
         {
@@ -55,7 +56,7 @@ return {
           desc = "lines",
           mode = "n",
           callback = function()
-            require("snacks.picker").lines()
+            snacks.picker.lines()
           end
         },
         {
@@ -63,7 +64,7 @@ return {
           desc = "todos",
           mode = "n",
           callback = function()
-            require("snacks.picker").todo_comments()
+            snacks.picker.todo_comments()
           end
         },
         {
@@ -71,22 +72,31 @@ return {
           desc = "lsp symbols",
           mode = "n",
           callback = function()
-            require("snacks.picker").lsp_symbols()
+            snacks.picker.lsp_symbols()
           end
         },
         {
           "<leader>x",
-          desc = "Delete current bufffer",
+          desc = "delete current bufffer",
           mode = "n",
           callback = function()
-            require("snacks.bufdelete").delete()
+            snacks.bufdelete.delete()
+          end
+        },
+        {
+          "<leader>X",
+          desc = "delete all other bufers",
+          mode = "n",
+          callback = function()
+            snacks.bufdelete.other()
           end
         },
         { "<leader>g", group = "git", mode = "n" },
+        { "<leader>go", mode = "n", callback = function() snacks.gitbrowse.open() end, desc = "open git repo", icon = { icon = " ", color = "white" } },
         {
           "<leader>gc",
           callback = function()
-            require("snacks.picker").git_branches()
+            snacks.picker.git_branches()
           end,
           desc = "git branches"
         },
@@ -97,7 +107,7 @@ return {
           desc = "Toggle file explorer",
           mode = "n",
           callback = function()
-            require("snacks.picker").explorer()
+            snacks.picker.explorer()
           end,
         },
         {
@@ -105,7 +115,7 @@ return {
           desc = "Find current file in explorer",
           mode = "n",
           callback = function()
-            require("snacks.picker").explorer({ follow_file = true })
+            snacks.picker.explorer({ follow_file = true })
           end,
         },
         { "<leader>b", group = "Buffer", mode = "n" },
@@ -152,13 +162,29 @@ return {
         },
         { "<leader>S", function() require("snacks.scratch").select() end, desc = "Select Scratch Buffer" },
         {
+          "<leader>fi",
+          function()
+            Snacks.picker.icons()
+          end,
+          desc = "find icons"
+        },
+        {
           "<leader>fd",
           function()
-            require("snacks.picker").diagnostics_buffer()
+            snacks.picker.diagnostics_buffer()
+          end,
+          desc = "search buffer diagnostics",
+          icon = { icon = "󰛯 ", color = "white" }
+        },
+        {
+          "<leader>fD",
+          callback = function()
+            snacks.picker.diagnostics()
           end,
           desc = "search diagnostics",
           icon = { icon = "󰛯 ", color = "white" }
-        }
+        },
+        { "<C-\\>", callback = function() snacks.terminal.toggle() end, desc = "toggle terminal"}
       })
     end,
   },
