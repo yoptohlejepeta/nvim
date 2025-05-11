@@ -84,5 +84,12 @@ return {
         header = "",
       },
     },
+    terminal = {
+      win = {
+        wo = {
+          winbar = ""
+        }
+      }
+    }
   },
 }
