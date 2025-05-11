@@ -8,10 +8,7 @@ return {
         plugins = {
           spelling = { enabled = true },
         },
-        -- preset = "helix",
-        -- win = {
-        --   border = "single",
-        -- },
+        preset = "helix",
       })
       local snacks = require("snacks")
 
