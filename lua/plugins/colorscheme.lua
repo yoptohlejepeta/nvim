@@ -8,8 +8,8 @@ return {
     lazy = false,
     config = function()
       require("catppuccin").setup({
-        styles = {
-          comments = { "italic" },
+        styles = {                 -- Handles the styles of general hi groups (see `:h highlight-args`):
+          comments = { "italic" }, -- Change the style of comments
         },
       })
     end
@@ -26,10 +26,8 @@ return {
     "rebelot/kanagawa.nvim",
     lazy = false,
     opts = {
+      keywordStyle = { italic = false },
       colors = {
-        pallete = {
-          -- carpYellow = "#e5c890"
-        },
         theme = {
           all = {
             ui = {
@@ -40,4 +38,26 @@ return {
       }
     },
   },
+  {
+    "tiagovla/tokyodark.nvim",
+    lazy = false,
+    opts = {
+      styles = {
+        comments = { italic = true },
+        keywords = { italic = false },
+        identifiers = { italic = false },
+        functions = {},
+        variables = {},
+      },
+    },
+    config = function(_, opts)
+      require("tokyodark").setup(vim.tbl_extend("force", opts, {
+        custom_highlights = function(highlights, palette)
+          highlights.String = { fg = palette.green }
+          highlights.Function = { fg = palette.yellow }
+          return highlights
+        end,
+      }))
+    end,
+  }
 }

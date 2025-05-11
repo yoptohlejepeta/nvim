@@ -67,6 +67,11 @@ return {
             colorscheme = "kanagawa-wave",
             before = [[vim.o.background = "dark"]],
           },
+          {
+            name = "tokyodark",
+            colorscheme = "tokyodark",
+            before = [[vim.o.background = "dark"]],
+          },
           -- light themes
           {
             name = "Dayfox",

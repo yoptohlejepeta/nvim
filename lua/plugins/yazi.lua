@@ -2,7 +2,7 @@ return {
   {
     "mikavilpas/yazi.nvim",
     event = "VeryLazy",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "folke/snacks.nvim" },
     config = function()
       require("yazi").setup({
         open_for_directories = false,

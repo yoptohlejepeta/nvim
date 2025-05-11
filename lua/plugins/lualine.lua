@@ -38,7 +38,7 @@ return {
             { "diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " } },
           },
           lualine_c = {
-            { "filename", symbols = { modified = "●", readonly = "" } },
+            { "filename", symbols = { modified = "●", readonly = " " } },
             current_function,
           },
           lualine_x = {

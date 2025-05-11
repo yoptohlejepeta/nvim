@@ -8,10 +8,10 @@ return {
         plugins = {
           spelling = { enabled = true },
         },
-        preset = "helix",
-        win = {
-          border = "single",
-        },
+        -- preset = "helix",
+        -- win = {
+        --   border = "single",
+        -- },
       })
       local snacks = require("snacks")
 
@@ -107,7 +107,7 @@ return {
           desc = "Toggle file explorer",
           mode = "n",
           callback = function()
-            snacks.picker.explorer()
+            snacks.explorer()
           end,
         },
         {
@@ -164,7 +164,7 @@ return {
         {
           "<leader>fi",
           function()
-            Snacks.picker.icons()
+            snacks.picker.icons()
           end,
           desc = "find icons"
         },

@@ -10,20 +10,15 @@ return {
     toggle = { which_key = true, map = vim.keymap.set, notify = true },
     bigfile = { enabled = true },
     bufdelete = { enabled = true },
-    image = {
-      formats = {
-        "svg", "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff",
-        "heic", "avif", "mp4", "mov", "avi", "mkv", "webm", "pdf",
-      },
-    },
+    image = { enabled = true },
     explorer = {
       replace_netrw = true,
       sources = {
         files = {
-          hidden = true,                                 -- Show hidden files in explorer
-          ignored = true,                                -- Show git-ignored files in explorer
-          include = { ".env" },                          -- Explicitly include .env files
-          exclude = { ".venv", "venv", "node_modules" }, -- Explicitly exclude .venv directory
+          hidden = true,
+          ignored = true,
+          include = { ".env" },
+          exclude = { ".venv", "venv", "node_modules", ".git" },
         },
       },
     },
@@ -58,12 +53,18 @@ return {
           jump = { close = true },
           hidden = true,
           layout = {
-            preset = "sidebar",
-            preview = false,
-            reverse = false,
+            preview = "false",
             layout = {
-              width = 0.2,
-            }
+              backdrop = false,
+              width = 30,
+              min_width = 20,
+              height = 0,
+              position = "left",
+              border = "none",
+              box = "vertical",
+              { win = "list", border = "none" },
+              -- { win = "preview", title = "{preview}", height = 0.4, border = "top" },
+            },
           },
           ignore = {
             git_ignored = false,
