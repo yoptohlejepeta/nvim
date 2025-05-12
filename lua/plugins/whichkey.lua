@@ -73,6 +73,14 @@ return {
           end
         },
         {
+          "<leader>fS",
+          desc = "workspace lsp symbols",
+          mode = "n",
+          callback = function ()
+            snacks.picker.lsp_workspace_symbols()
+          end
+        },
+        {
           "<leader>x",
           desc = "delete current bufffer",
           mode = "n",
@@ -181,7 +189,15 @@ return {
           desc = "search diagnostics",
           icon = { icon = "󰛯 ", color = "white" }
         },
-        { "<C-\\>", callback = function() snacks.terminal.toggle() end, desc = "toggle terminal"}
+        { "<C-\\>", callback = function() snacks.terminal.toggle() end, desc = "toggle terminal"},
+        {
+          "gd",
+          desc = "goto definition",
+          mode = "n",
+          callback = function ()
+            snacks.picker.lsp_definitions()
+          end
+        }
       })
     end,
   },

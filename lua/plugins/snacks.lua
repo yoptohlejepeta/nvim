@@ -10,7 +10,10 @@ return {
     toggle = { which_key = true, map = vim.keymap.set, notify = true },
     bigfile = { enabled = true },
     bufdelete = { enabled = true },
-    image = { enabled = true },
+    -- image = { enabled = true, float = true, inline = true },
+    image = {
+      enabled = true,
+    },
     explorer = {
       replace_netrw = true,
       sources = {
@@ -25,7 +28,6 @@ return {
     picker = {
       layout = {
         cycle = true,
-        --- Use the default layout or vertical if the window is too narrow
         preset = function()
           return vim.o.columns >= 100 and "default" or "vertical"
         end,
@@ -39,7 +41,7 @@ return {
             patterns = { ".venv", ".git" },
           },
           include = { ".env" },
-          exclude = { ".venv", "venv", "node_modules" },
+          exclude = { ".venv", "venv", "node_modules", "*cache*", ".hypothesis" },
         },
         explorer = {
           follow_file = true,

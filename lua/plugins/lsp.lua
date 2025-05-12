@@ -19,7 +19,6 @@ return {
       "julials",
       "lua_ls",
       "pyright",
-      -- "basedpyright",
       "ruff",
       "texlab",
       "html",
@@ -36,7 +35,7 @@ return {
       if server == "lua_ls" then
         opts.settings = {
           Lua = {
-            diagnostics = { globals = { "vim" , "snacks"} },
+            diagnostics = { globals = { "vim", "snacks" } },
           },
         }
       elseif server == "gopls" then
@@ -49,20 +48,6 @@ return {
             }
           }
         }
-      -- elseif server == "basedpyright" then
-      --   opts.settings = {
-      --     basedpyright = {
-      --       analysis = {
-      --         inlayHints = {
-      --           variableTypes = false,
-      --         },
-      --         diagnosticSeverityOverrides = {
-      --           reportAny = false,
-      --           reportUnknownVariableType = false
-      --         }
-      --       }
-      --     }
-      --   }
       elseif server == "tinymist" then
         opts = { offset_encoding = "utf-8" }
         opts.settings = {
@@ -81,7 +66,7 @@ return {
       severity_sort = true,
     })
 
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
+    -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
     vim.keymap.set("n", "gb", "<C-o>", { desc = "Go Back from Definition" })
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
     vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Documentation" })

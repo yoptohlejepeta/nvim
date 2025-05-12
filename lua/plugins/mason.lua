@@ -23,7 +23,7 @@ return {
           "gopls",
           "julials",
           "lua_ls",
-          "basedpyright",
+          "pyright",
           "ruff",
           "texlab",
           "html",
