@@ -76,7 +76,7 @@ return {
           "<leader>fS",
           desc = "workspace lsp symbols",
           mode = "n",
-          callback = function ()
+          callback = function()
             snacks.picker.lsp_workspace_symbols()
           end
         },
@@ -141,6 +141,14 @@ return {
           desc = "home (dashboard)",
           icon = { icon = " ", color = "white" }
         },
+        {
+          "<leader>gl",
+          mode = "n",
+          desc = "lazygit",
+          callback = function()
+            snacks.lazygit.open()
+          end
+        },
         { "<leader>d", group = "diagnostics", mode = "n" },
         {
           "<localleader>c",
@@ -165,7 +173,7 @@ return {
         {
           "<leader>.", function() require("snacks").scratch() end, desc = "Toggle Scratch Buffer"
         },
-        { "<leader>S", function() require("snacks.scratch").select() end, desc = "Select Scratch Buffer" },
+        { "<leader>S", function() require("snacks.scratch").select() end,  desc = "Select Scratch Buffer" },
         {
           "<leader>fi",
           function()
@@ -189,12 +197,12 @@ return {
           desc = "search diagnostics",
           icon = { icon = "󰛯 ", color = "white" }
         },
-        { "<C-\\>", callback = function() snacks.terminal.toggle() end, desc = "toggle terminal"},
+        { "<C-\\>",    callback = function() snacks.terminal.toggle() end, desc = "toggle terminal" },
         {
           "gd",
           desc = "goto definition",
           mode = "n",
-          callback = function ()
+          callback = function()
             snacks.picker.lsp_definitions()
           end
         }
