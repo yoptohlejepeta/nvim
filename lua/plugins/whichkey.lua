@@ -16,22 +16,8 @@ return {
         { "<leader>w", hidden = true },
         { "<leader>q", hidden = true },
         { "<leader>f", group = "find", mode = "n", icon = { icon = " ", color = "white" } },
-        {
-          "<leader>ff",
-          desc = "files",
-          mode = "n",
-          callback = function()
-            snacks.picker.files()
-          end,
-        },
-        {
-          "<leader>fg",
-          desc = "live grep",
-          mode = "n",
-          callback = function()
-            snacks.picker.grep({ hidden = true })
-          end,
-        },
+        { "<leader>ff", desc = "files", mode = "n", callback = function() snacks.picker.files() end },
+        { "<leader>fg", desc = "live grep", mode = "n", callback = function() snacks.picker.grep({ hidden = true }) end },
         {
           "<leader>fb",
           desc = "buffers",
@@ -97,24 +83,17 @@ return {
           end
         },
         { "<leader>g", group = "git", mode = "n" },
-        { "<leader>go", mode = "n", callback = function() snacks.gitbrowse.open() end, desc = "open git repo", icon = { icon = " ", color = "white" } },
         {
-          "<leader>gc",
-          callback = function()
-            snacks.picker.git_branches()
-          end,
-          desc = "git branches"
+          "<leader>go",
+          mode = "n",
+          callback = function() snacks.gitbrowse.open() end,
+          desc = "open git repo",
+          icon = { icon = " ", color = "white" }
         },
+        { "<leader>gc", callback = function() snacks.picker.git_branches() end, desc = "git branches" },
         { "<leader>c", group = "comment/code action", mode = "n", icon = { icon = " ", color = "green" } },
         { "<leader>t", group = "theme", mode = "n", icon = { icon = " ", color = "white" } },
-        {
-          "<leader>e",
-          desc = "Toggle file explorer",
-          mode = "n",
-          callback = function()
-            snacks.explorer()
-          end,
-        },
+        { "<leader>e", desc = "Toggle file explorer", mode = "n", callback = function() snacks.explorer() end },
         {
           "<leader>E",
           desc = "Find current file in explorer",
