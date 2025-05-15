@@ -6,10 +6,8 @@ return {
     config = function()
       local luasnip = require("luasnip")
 
-      -- Load custom snippets from ~/.config/nvim/snippets/
       require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 
-      -- Keybindings for snippet navigation
       vim.keymap.set({ "i", "s" }, "<C-k>", function()
         if luasnip.expand_or_jump() then
           return

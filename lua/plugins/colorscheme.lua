@@ -19,10 +19,6 @@ return {
     lazy = false,
   },
   {
-    "yoptohlejepeta/vim-dogrun",
-    lazy = false,
-  },
-  {
     "rebelot/kanagawa.nvim",
     lazy = false,
     opts = {
@@ -42,6 +38,7 @@ return {
     "tiagovla/tokyodark.nvim",
     lazy = false,
     opts = {
+      gamma = 1.2,
       styles = {
         comments = { italic = true },
         keywords = { italic = false },
@@ -59,5 +56,14 @@ return {
         end,
       }))
     end,
-  }
+  },
+  -- {
+  --   "JoosepAlviste/palenightfall.nvim",
+  --   lazy = false,
+  --   opts = {
+  --     -- color_overrides = {
+  --     --   background = "#A9A9A9"
+  --     -- }
+  --   }
+  -- }
 }
