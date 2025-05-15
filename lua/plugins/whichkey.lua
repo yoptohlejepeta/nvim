@@ -184,7 +184,8 @@ return {
           callback = function()
             snacks.picker.lsp_definitions()
           end
-        }
+        },
+        { "<localleader>d", "<cmd>DBUIToggle<CR>", desc = "toggle db view", icon = { icon = " ", color = "white" } }
       })
     end,
   },

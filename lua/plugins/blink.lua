@@ -12,7 +12,15 @@ return {
     end
     opts.sources = {
       default = { "lsp", "path", "snippets", "buffer" },
+      per_filetype = {
+        sql = { 'snippets', 'dadbod', 'buffer' },
+        mysql = { 'snippets', 'dadbod', 'buffer' },
+      },
       providers = {
+        dadbod = {
+          name = "Dadbod",
+          module = "vim_dadbod_completion.blink"
+        },
         lsp = {
           name = "LSP",
           module = "blink.cmp.sources.lsp",
@@ -42,10 +50,10 @@ return {
       },
     }
     opts.keymap = {
-      -- ["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
-      -- ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
+      ["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
+      ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
       ["<C-Space>"] = { "show" },
-      ["<Tab>"] = { "accept", "fallback"},
+      ["<CR>"] = { "accept", "fallback" },
       ["<C-e>"] = { "hide", "fallback" },
       ["<C-s>"] = {
         function()

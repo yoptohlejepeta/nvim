@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
+    -- "rcarriga/nvim-notify",  -- uncomment for notifications ui
   },
   opts = {
     lsp = { signature = { auto_open = false } },
