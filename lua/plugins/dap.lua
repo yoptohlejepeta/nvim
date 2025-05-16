@@ -1,0 +1,100 @@
+return {
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "mfussenegger/nvim-dap-python",
+  --     "rcarriga/nvim-dap-ui",
+  --     "nvim-neotest/nvim-nio",
+  --     "theHamsta/nvim-dap-virtual-text",
+  --     "williamboman/mason.nvim",
+  --     "jay-babu/mason-nvim-dap.nvim",
+  --   },
+  --   config = function()
+  --     require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python") -- dir of debugpy installed by mason
+  --
+  --     local dap = require("dap")
+  --     local dapui = require("dapui")
+  --
+  --     dap.listeners.after.event_initialized["dapui_config"] = function()
+  --       dapui.open()
+  --     end
+  --
+  --     dap.listeners.before.event_terminated["dapui_config"] = function()
+  --       dapui.close()
+  --     end
+  --
+  --     dap.listeners.before.event_exited["dapui_config"] = function()
+  --       dapui.close()
+  --     end
+  --
+  --     dapui.setup({
+  --       icons = { expanded = "▾", collapsed = "▸", current_frame = "→" },
+  --       mappings = {
+  --         expand = { "<CR>", "<2-LeftMouse>" },
+  --         open = "o",
+  --         remove = "d",
+  --         edit = "e",
+  --         repl = "r",
+  --         toggle = "t",
+  --       },
+  --       layouts = {
+  --         {
+  --           elements = {
+  --             -- Elements can be strings or tables with id and size keys.
+  --             { id = "scopes", size = 0.25 },
+  --             "breakpoints",
+  --             "stacks",
+  --             "watches",
+  --           },
+  --           size = 40, -- 40 columns
+  --           position = "left",
+  --         },
+  --         {
+  --           elements = {
+  --             "repl",
+  --             "console",
+  --           },
+  --           size = 0.25, -- 25% of total lines
+  --           position = "bottom",
+  --         },
+  --       },
+  --       floating = {
+  --         max_height = nil,  -- These can be integers or nil.
+  --         max_width = nil,   -- Floats will be treated as percentage of your screen.
+  --         border = "single", -- Border style. Can be "single", "double" or "rounded"
+  --         mappings = {
+  --           close = { "q", "<Esc>" },
+  --         },
+  --       },
+  --     })
+  --
+  --     -- Initialize nvim-dap-virtual-text
+  --     require("nvim-dap-virtual-text").setup({
+  --       enabled = true,
+  --       enabled_commands = true,
+  --       highlight_changed_variables = true,
+  --       highlight_new_as_changed = false,
+  --       show_stop_reason = true,
+  --       commented = false,
+  --       virt_text_pos = 'eol',
+  --       all_frames = false,
+  --       virt_lines = false,
+  --       virt_text_win_col = nil
+  --     })
+  --
+  --     -- Set up keymappings for debugging
+  --     vim.keymap.set('n', '<F5>', function() dap.continue() end, { desc = 'Debug: Continue' })
+  --     vim.keymap.set('n', '<F10>', function() dap.step_over() end, { desc = 'Debug: Step Over' })
+  --     vim.keymap.set('n', '<F11>', function() dap.step_into() end, { desc = 'Debug: Step Into' })
+  --     vim.keymap.set('n', '<F12>', function() dap.step_out() end, { desc = 'Debug: Step Out' })
+  --     vim.keymap.set('n', '<Leader>db', function() dap.toggle_breakpoint() end, { desc = 'Debug: Toggle Breakpoint' })
+  --     vim.keymap.set('n', '<Leader>dB', function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
+  --       { desc = 'Debug: Set Conditional Breakpoint' })
+  --     vim.keymap.set('n', '<Leader>dl', function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end,
+  --       { desc = 'Debug: Set Log Point' })
+  --     vim.keymap.set('n', '<Leader>dr', function() dap.repl.open() end, { desc = 'Debug: Open REPL' })
+  --     vim.keymap.set('n', '<Leader>du', function() dapui.toggle() end, { desc = 'Debug: Toggle UI' })
+  --   end,
+  -- }
+}

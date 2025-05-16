@@ -19,11 +19,11 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          "jedi_language_server",
           "rust_analyzer",
           "gopls",
           "julials",
           "lua_ls",
-          "pyright",
           "ruff",
           "texlab",
           "html",

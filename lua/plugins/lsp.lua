@@ -14,11 +14,11 @@ return {
     local lspconfig = require("lspconfig")
 
     local servers = {
+      "jedi_language_server",
       "rust_analyzer",
       "gopls",
       "julials",
       "lua_ls",
-      "pyright",
       "ruff",
       "texlab",
       "html",
