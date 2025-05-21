@@ -4,13 +4,12 @@ return {
     "L3MON4D3/LuaSnip",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "chomosuke/typst-preview.nvim",
-    "kaarmu/typst.vim",
+    "saghen/blink.cmp",
   },
   config = function()
     vim.lsp.inlay_hint.enable(true)
 
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
     local lspconfig = require("lspconfig")
 
     local servers = {
@@ -50,7 +49,10 @@ return {
           }
         }
       elseif server == "tinymist" then
-        opts = { offset_encoding = "utf-8" }
+        opts = {
+          capabilities = capabilities,
+          offset_encoding = "utf-8"
+        }
         opts.settings = {
           exportPdf = "onType",
           formatterMode = "typstyle",
@@ -67,10 +69,8 @@ return {
       severity_sort = true,
     })
 
-    -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
     vim.keymap.set("n", "gb", "<C-o>", { desc = "Go Back from Definition" })
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
-    -- vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Documentation" })
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
   end,

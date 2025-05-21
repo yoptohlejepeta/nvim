@@ -39,10 +39,7 @@ return {
             { "filename", symbols = { modified = "●", readonly = " " } },
             current_function,
           },
-          -- lualine_x = {
-          --   { "filetype", icon = { align = "right" } },
-          -- },
-          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_x = { "encoding", "filetype" },
           lualine_y = {
             -- { "progress", icon = "" },
           },

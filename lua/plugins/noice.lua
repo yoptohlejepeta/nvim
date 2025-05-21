@@ -6,7 +6,7 @@ return {
     -- "rcarriga/nvim-notify",  -- uncomment for notifications ui
   },
   opts = {
-    -- lsp = { signature = { auto_open = true } },
+    lsp = { signature = { auto_open = false } },
     presets = {
       lsp_doc_border = true
     }

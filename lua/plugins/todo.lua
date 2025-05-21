@@ -12,7 +12,7 @@ return {
         PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
         TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-        -- TODO: add FIX keyword
+        FIXME = { icon = "󰑶 ", alt = { "FIX" } }
       },
       colors = {
         error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
