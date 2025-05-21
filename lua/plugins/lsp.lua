@@ -15,7 +15,6 @@ return {
 
     local servers = {
       "pyright",
-      "rust_analyzer",
       "gopls",
       "julials",
       "lua_ls",

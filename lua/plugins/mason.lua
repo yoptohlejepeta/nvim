@@ -20,7 +20,6 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "pyright",
-          "rust_analyzer",
           "gopls",
           "julials",
           "lua_ls",
