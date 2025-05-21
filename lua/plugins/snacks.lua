@@ -2,7 +2,8 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   dependencies = {
-    "nvim-tree/nvim-web-devicons"
+    -- "nvim-tree/nvim-web-devicons"
+    "echasnovski/mini.icons"
   },
   lazy = false,
   ---@type snacks.Config
@@ -10,9 +11,11 @@ return {
     toggle = { which_key = true, map = vim.keymap.set, notify = true },
     bigfile = { enabled = true },
     bufdelete = { enabled = true },
-    -- image = { enabled = true, float = true, inline = true },
     image = {
       enabled = true,
+      doc = {
+        inline = false
+      }
     },
     explorer = {
       replace_netrw = true,

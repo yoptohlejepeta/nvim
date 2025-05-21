@@ -14,7 +14,7 @@ return {
     local lspconfig = require("lspconfig")
 
     local servers = {
-      "jedi_language_server",
+      "pyright",
       "rust_analyzer",
       "gopls",
       "julials",
@@ -26,7 +26,9 @@ return {
       "tinymist",
       "zls",
       "dockerls",
-      "docker_compose_language_service" -- FIX:
+      "docker_compose_language_service", -- FIX:
+      -- "alejandra",
+      -- "nil",
     }
 
     for _, server in ipairs(servers) do
@@ -69,7 +71,7 @@ return {
     -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
     vim.keymap.set("n", "gb", "<C-o>", { desc = "Go Back from Definition" })
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Documentation" })
+    -- vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Hover Documentation" })
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
   end,

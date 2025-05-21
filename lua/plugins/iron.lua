@@ -10,10 +10,10 @@ return {
         scratch_repl = false,
         repl_definition = {
           sh = {
-            command = { "zsh" }
+            command = { "bash" }
           },
           python = {
-            command = { "python3" },
+            command = { "python" },
             format = common.bracketed_paste_python,
             block_dividers = { "# %%", "#%%" },
           }

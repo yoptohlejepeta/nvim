@@ -2,7 +2,8 @@ return {
   "saghen/blink.cmp",
   dependencies = {
     "L3MON4D3/LuaSnip",
-    "onsails/lspkind.nvim"
+    "onsails/lspkind.nvim",
+    "echasnovski/mini.icons"
   },
   build = "cargo build --release",
   opts = function(_, opts)
@@ -70,6 +71,7 @@ return {
 
       ["<C-d>"] = { "scroll_documentation_down", "fallback" },
       ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+      ["K"] = { "show_documentation", "fallback" }
     }
 
     opts.signature = { window = { border = "single" } }
@@ -80,39 +82,42 @@ return {
           border = "rounded",
         },
       },
+      signature = {
+        enabled = true,
+        trigger = {
+          -- Show the signature help automatically
+          enabled = true,
+          -- Show the signature help window after typing any of alphanumerics, `-` or `_`
+          show_on_keyword = true,
+          blocked_trigger_characters = {},
+          blocked_retrigger_characters = {},
+          -- Show the signature help window after typing a trigger character
+          show_on_trigger_character = true,
+          -- Show the signature help window when entering insert mode
+          show_on_insert = true,
+          -- Show the signature help window when the cursor comes after a trigger character when entering insert mode
+          show_on_insert_on_trigger_character = true,
+        },
+      },
       menu = {
         border = "rounded",
-        draw = {
+        w = {
           components = {
             kind_icon = {
               text = function(ctx)
-                local lspkind = require("lspkind")
-                local icon = ctx.kind_icon
-                if vim.tbl_contains({ "Path" }, ctx.source_name) then
-                  local dev_icon, _ = require("nvim-web-devicons").get_icon(ctx.label)
-                  if dev_icon then
-                    icon = dev_icon
-                  end
-                else
-                  icon = require("lspkind").symbolic(ctx.kind, {
-                    mode = "symbol",
-                  })
-                end
-
-                return icon .. ctx.icon_gap
+                local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
+                return kind_icon
               end,
-
-              -- Optionally, use the highlight groups from nvim-web-devicons
-              -- You can also add the same function for `kind.highlight` if you want to
-              -- keep the highlight groups in sync with the icons.
+              -- (optional) use highlights from mini.icons
               highlight = function(ctx)
-                local hl = ctx.kind_hl
-                if vim.tbl_contains({ "Path" }, ctx.source_name) then
-                  local dev_icon, dev_hl = require("nvim-web-devicons").get_icon(ctx.label)
-                  if dev_icon then
-                    hl = dev_hl
-                  end
-                end
+                local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                return hl
+              end,
+            },
+            kind = {
+              -- (optional) use highlights from mini.icons
+              highlight = function(ctx)
+                local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
                 return hl
               end,
             }

@@ -24,8 +24,6 @@ return {
       require("lualine").setup({
         options = {
 
-          section_separators = { left = "", right = "" },
-          component_separators = { left = "", right = "" },
           icons_enabled = true,
         },
         sections = {
@@ -41,9 +39,10 @@ return {
             { "filename", symbols = { modified = "●", readonly = " " } },
             current_function,
           },
-          lualine_x = {
-            { "filetype", icon = { align = "right" } },
-          },
+          -- lualine_x = {
+          --   { "filetype", icon = { align = "right" } },
+          -- },
+          lualine_x = { 'encoding', 'fileformat', 'filetype' },
           lualine_y = {
             -- { "progress", icon = "" },
           },

@@ -38,7 +38,7 @@ return {
     "tiagovla/tokyodark.nvim",
     lazy = false,
     opts = {
-      gamma = 1.2,
+      gamma = 1.1,
       styles = {
         comments = { italic = true },
         keywords = { italic = false },
@@ -52,18 +52,20 @@ return {
         custom_highlights = function(highlights, palette)
           highlights.String = { fg = palette.green }
           highlights.Function = { fg = palette.yellow }
+
+          highlights.MiniIconsAzure = { fg = "#007fff" }
+          highlights.MiniIconsBlue = { fg = palette.blue }
+          highlights.MiniIconsCyan = { fg = palette.cyan }
+          highlights.MiniIconsGreen = { fg = palette.green }
+          highlights.MiniIconsGrey = { fg = palette.grey }
+          highlights.MiniIconsOrange = { fg = palette.orange }
+          highlights.MiniIconsPurple = { fg = palette.purple }
+          highlights.MiniIconsRed = { fg = palette.red }
+          highlights.MiniIconsYellow = { fg = palette.yellow }
+
           return highlights
         end,
       }))
-    end,
+    end
   },
-  -- {
-  --   "JoosepAlviste/palenightfall.nvim",
-  --   lazy = false,
-  --   opts = {
-  --     -- color_overrides = {
-  --     --   background = "#A9A9A9"
-  --     -- }
-  --   }
-  -- }
 }

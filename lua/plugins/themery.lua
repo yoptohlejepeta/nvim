@@ -57,11 +57,6 @@ return {
             colorscheme = "tokyonight-night",
             before = [[vim.o.background = "dark"]],
           },
-          -- {
-          --   name = "palenightfall",
-          --   colorscheme = "palenightfall",
-          --   before = [[vim.o.background = "dark"]],
-          -- },
           {
             name = "kanagawa",
             colorscheme = "kanagawa-wave",
