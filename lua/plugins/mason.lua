@@ -27,7 +27,8 @@ return {
           "texlab",
           "html",
           "cssls",
-          "ts_ls",
+          -- "ts_ls",
+          "marksman",
         },
         automatic_installation = true,
       })

@@ -39,7 +39,7 @@ return {
           desc = "lines",
           mode = "n",
           callback = function()
-            snacks.picker.lines()
+            snacks.picker.lines({layout = {preset = "vscode"}})
           end
         },
         {
@@ -185,7 +185,8 @@ return {
             snacks.picker.lsp_definitions()
           end
         },
-        { "<localleader>d", "<cmd>DBUIToggle<CR>", desc = "toggle db view", icon = { icon = " ", color = "white" } }
+        { "<localleader>d", "<cmd>DBUIToggle<CR>", desc = "db view", icon = { icon = " ", color = "white" } },
+        { "<localleader>i", callback = function() snacks.image.hover() end, desc = "image preview", icon = { icon = " ", color = "purple" } }
       })
     end,
   },

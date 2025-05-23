@@ -25,6 +25,7 @@ return {
       "zls",
       "dockerls",
       "docker_compose_language_service", -- FIX:
+      "marksman"
       -- "alejandra",
       -- "nil",
     }
@@ -51,11 +52,16 @@ return {
       elseif server == "tinymist" then
         opts = {
           capabilities = capabilities,
-          offset_encoding = "utf-8"
+          offset_encoding = "utf-8",
+          lint = {
+            enabled = true,
+            when = "onType"
+          }
         }
         opts.settings = {
           exportPdf = "onType",
           formatterMode = "typstyle",
+          semanticTokens = "disable"
         }
       end
 
