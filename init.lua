@@ -1,8 +1,8 @@
 require("config.options")
 require("config.keymaps")
 
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
 
 -- LAZY
 -- ====
@@ -22,3 +22,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins", {
   change_detection = { notify = false },
 })
+
+ for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
+   dofile(vim.g.base46_cache .. v)
+ end

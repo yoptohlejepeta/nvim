@@ -2,8 +2,7 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   dependencies = {
-    -- "nvim-tree/nvim-web-devicons"
-    "echasnovski/mini.icons"
+    "nvim-tree/nvim-web-devicons"
   },
   lazy = false,
   ---@type snacks.Config
@@ -31,12 +30,6 @@ return {
       },
     },
     picker = {
-      layout = {
-        cycle = true,
-        preset = function()
-          return vim.o.columns >= 100 and "default" or "vertical"
-        end,
-      },
       sources = {
         files = {
           hidden = true,
@@ -70,7 +63,6 @@ return {
               border = "none",
               box = "vertical",
               { win = "list", border = "none" },
-              -- { win = "preview", title = "{preview}", height = 0.4, border = "top" },
             },
           },
           ignore = {

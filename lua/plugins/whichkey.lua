@@ -13,6 +13,7 @@ return {
       local snacks = require("snacks")
 
       wk.add({
+        { "<leader>th", callback = function() require("nvchad.themes").open() end },
         { "<leader>w", hidden = true },
         { "<leader>q", hidden = true },
         { "<leader>f", group = "find", mode = "n", icon = { icon = " ", color = "white" } },
@@ -39,7 +40,7 @@ return {
           desc = "lines",
           mode = "n",
           callback = function()
-            snacks.picker.lines({layout = {preset = "vscode"}})
+            snacks.picker.lines({ layout = { preset = "ivy" } })
           end
         },
         {
@@ -102,8 +103,19 @@ return {
             snacks.picker.explorer({ follow_file = true })
           end,
         },
-        { "<leader>b", group = "Buffer", mode = "n" },
-        { "g",         group = "Goto",   mode = "n" },
+        -- {
+        --   "<Tab>",
+        --   callback = function()
+        --     require("nvchad.tabufline").next()
+        --   end
+        -- },
+        -- {
+        --   "<S-Tab>",
+        --   callback = function()
+        --     require("nvchad.tabufline").prev()
+        --   end
+        -- },
+        { "g",         group = "Goto",        mode = "n" },
         {
           "grr",
           callback = function()
