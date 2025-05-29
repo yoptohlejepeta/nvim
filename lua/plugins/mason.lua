@@ -3,11 +3,7 @@ return {
     "williamboman/mason.nvim",
     cmd = { "Mason", "MasonInstall", "MasonUninstall" },
     config = function()
-      require("mason").setup({
-        ui = {
-          border = "rounded",
-        },
-      })
+      require("mason").setup()
     end,
   },
   {
@@ -18,6 +14,7 @@ return {
     },
     config = function()
       require("mason-lspconfig").setup({
+        automatic_enable = false,
         ensure_installed = {
           "pyright",
           "gopls",
@@ -27,7 +24,6 @@ return {
           "texlab",
           "html",
           "cssls",
-          -- "ts_ls",
           "marksman",
         },
         automatic_installation = true,

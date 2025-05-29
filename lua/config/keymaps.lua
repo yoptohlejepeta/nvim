@@ -6,7 +6,4 @@ vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev, { desc = "Previous d
 vim.keymap.set("n", "<leader>a", "gg<S-v>G", { desc = "select all" })
 vim.keymap.set("n", "<C-l>", "zL", { desc = "half screen right" })
 vim.keymap.set("n", "<C-h>", "zH", { desc = "half screen left" })
--- vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
 
-
--- vim.keymap.del("n", "<C-s>") -- i dont know why this doesnt work
