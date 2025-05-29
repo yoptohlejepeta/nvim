@@ -18,8 +18,8 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "next buffer" })
-      vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "prev buffer" })
+      -- vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "next buffer" })
+      -- vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "prev buffer" })
       -- vim.keymap.set("n", "<leader>bd", ":BufferLinePickClose<CR>", { desc = "Pick buffer to close" })
       vim.keymap.set("n", "<leader>b", ":BufferLinePick<CR>", { desc = "Pick buffer" })
     end,

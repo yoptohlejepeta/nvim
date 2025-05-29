@@ -55,8 +55,11 @@ return {
       }
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer', "dadbod" },
+      default = { 'snippets', 'lsp', 'path', 'buffer', "dadbod" },
       providers = {
+        snippets = {
+          score_offset = 3
+        },
         dadbod = {
           name = "Dadbod",
           module = "vim_dadbod_completion.blink"

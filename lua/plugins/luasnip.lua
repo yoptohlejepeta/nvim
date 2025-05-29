@@ -7,24 +7,6 @@ return {
       local luasnip = require("luasnip")
 
       require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-
-      vim.keymap.set({ "i", "s" }, "<C-k>", function()
-        if luasnip.expand_or_jump() then
-          return
-        end
-      end, { silent = true, desc = "Expand snippet or jump to next placeholder" })
-
-      vim.keymap.set({ "i", "s" }, "<C-j>", function()
-        if luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        end
-      end, { silent = true, desc = "Jump to previous placeholder" })
-
-      vim.keymap.set("i", "<C-l>", function()
-        if luasnip.choice_active() then
-          luasnip.change_choice(1)
-        end
-      end, { silent = true, desc = "Cycle through snippet choices" })
     end,
   },
 }
