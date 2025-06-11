@@ -13,7 +13,7 @@ return {
             command = { "bash" }
           },
           python = {
-            command = { "python" },
+            command = { "ipython" },
             format = common.bracketed_paste_python,
             block_dividers = { "# %%", "#%%" },
           }

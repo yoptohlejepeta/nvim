@@ -162,10 +162,6 @@ return {
           icon = { icon = " ", color = "white" }
         },
         {
-          "<leader>.", function() require("snacks").scratch() end, desc = "Toggle Scratch Buffer"
-        },
-        { "<leader>S", function() require("snacks.scratch").select() end,  desc = "Select Scratch Buffer" },
-        {
           "<leader>fi",
           function()
             snacks.picker.icons()

@@ -15,5 +15,15 @@ return {
   {
     "nvchad/volt",
     lazy = false,
+  },
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
+  },
+  {
+    "nvzone/minty",
+    cmd = { "Shades", "Huefy" },
   }
 }
