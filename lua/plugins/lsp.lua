@@ -24,10 +24,9 @@ return {
       "tinymist",
       "zls",
       "dockerls",
-      "docker_compose_language_service", -- FIX:
-      "marksman"
-      -- "alejandra",
-      -- "nil",
+      "docker_compose_language_service",
+      "marksman",
+      "yamlls"
     }
 
     for _, server in ipairs(servers) do
@@ -79,6 +78,5 @@ return {
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
-
   end,
 }

@@ -9,7 +9,6 @@ return {
   opts = {
     toggle = { which_key = true, map = vim.keymap.set, notify = true },
     bigfile = { enabled = true },
-    words = { enabled = true },
     bufdelete = { enabled = true },
     image = {
       enabled = true,

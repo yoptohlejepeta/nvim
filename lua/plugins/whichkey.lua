@@ -184,7 +184,7 @@ return {
           desc = "search diagnostics",
           icon = { icon = "󰛯 ", color = "white" }
         },
-        { "<C-\\>",    callback = function() snacks.terminal.toggle() end, desc = "toggle terminal" },
+        { "<C-\\>", callback = function() snacks.terminal.toggle() end, desc = "toggle terminal" },
         {
           "gd",
           desc = "goto definition",
@@ -194,7 +194,8 @@ return {
           end
         },
         { "<localleader>d", "<cmd>DBUIToggle<CR>", desc = "db view", icon = { icon = " ", color = "white" } },
-        { "<localleader>i", callback = function() snacks.image.hover() end, desc = "image preview", icon = { icon = " ", color = "purple" } }
+        { "<localleader>i", callback = function() snacks.image.hover() end, desc = "image preview", icon = { icon = " ", color = "purple" } },
+        { "<localleader>f", "<cmd>FloatermToggle<CR>", desc = "floaterm" }
       })
     end,
   },

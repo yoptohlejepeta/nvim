@@ -25,6 +25,7 @@ return {
           "html",
           "cssls",
           "marksman",
+          "yamlls"
         },
         automatic_installation = true,
       })
