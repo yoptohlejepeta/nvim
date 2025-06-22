@@ -195,7 +195,7 @@ return {
         },
         { "<localleader>d", "<cmd>DBUIToggle<CR>", desc = "db view", icon = { icon = " ", color = "white" } },
         { "<localleader>i", callback = function() snacks.image.hover() end, desc = "image preview", icon = { icon = " ", color = "purple" } },
-        { "<localleader>f", "<cmd>FloatermToggle<CR>", desc = "floaterm" }
+        { "<leader>ld", callback = function() snacks.terminal("lazydocker") end, desc = "lazydocker", icon = { icon = " ", color = "azure" } }
       })
     end,
   },
