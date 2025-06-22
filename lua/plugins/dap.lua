@@ -12,7 +12,7 @@ return {
     },
     config = function()
       require("mason-nvim-dap").setup({
-        ensure_installed = { "python", "delve" }   -- debugpy and go debugging
+        ensure_installed = { "python", "delve" } -- debugpy and go debugging
       })
 
       require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python") -- mason debugpy
@@ -20,6 +20,8 @@ return {
 
       local dap = require("dap")
       local dapui = require("dapui")
+
+      vim.fn.sign_define('DapBreakpoint', { text = '❌', texthl = '', linehl = '', numhl = '' })
 
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
