@@ -26,7 +26,7 @@ return {
       "dockerls",
       "docker_compose_language_service",
       "marksman",
-      "yamlls"
+      "yamlls",
     }
 
     for _, server in ipairs(servers) do

@@ -10,6 +10,9 @@ return {
       nerd_font_variant = 'mono'
     },
     completion = {
+      keyword = {
+        range = "full"
+      },
       list = {
         selection = {
           auto_insert = false
@@ -58,7 +61,7 @@ return {
       default = { 'snippets', 'lsp', 'path', 'buffer', "dadbod" },
       providers = {
         snippets = {
-          score_offset = 3
+          score_offset = 0
         },
         dadbod = {
           name = "Dadbod",
