@@ -13,6 +13,6 @@ vim.opt.fillchars:append { eob = " " }
 vim.opt.clipboard = "unnamedplus"
 
 
-vim.diagnostic.config{
-  float={border="rounded"}
+vim.diagnostic.config {
+  float = { border = "rounded" }
 }

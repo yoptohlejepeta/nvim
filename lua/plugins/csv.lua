@@ -1,15 +1,13 @@
 return {
   {
     "hat0uma/csvview.nvim",
-    event = { "BufReadPre", "BufNewFile" },
     ft = { "csv", "tsv" },
     config = function()
-
       require("csvview").setup({
         view = {
           display_mode = "border",
           header_lnum = 1,
-          sticky_header= {
+          sticky_header = {
             enabled = true
           }
         },
@@ -25,6 +23,20 @@ return {
           jump_prev_row = { "<S-Enter>", mode = { "n", "v" } },
         },
       })
+
+      local wk = require("which-key")
+
+      wk.add {
+        {
+          "<localleader>c",
+          desc = "csv toggle",
+          mode = "n",
+          callback = function()
+            require("csvview").toggle()
+          end,
+          icon = { icon = " ", color = "green" },
+        },
+      }
     end,
   },
 }
