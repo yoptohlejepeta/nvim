@@ -15,17 +15,17 @@ return {
         float = false
       }
     },
-    explorer = {
-      replace_netrw = true,
-      sources = {
-        files = {
-          hidden = true,
-          ignored = true,
-          include = { ".env" },
-          exclude = { ".venv", "venv", "node_modules", ".git" },
-        },
-      },
-    },
+    -- explorer = {
+    --   replace_netrw = true,
+    --   sources = {
+    --     files = {
+    --       hidden = true,
+    --       ignored = true,
+    --       include = { ".env" },
+    --       exclude = { ".venv", "venv", "node_modules", ".git" },
+    --     },
+    --   },
+    -- },
     picker = {
       sources = {
         files = {
