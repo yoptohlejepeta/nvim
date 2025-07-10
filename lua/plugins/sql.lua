@@ -1,5 +1,6 @@
 return {
   'kristijanhusak/vim-dadbod-ui',
+  ft = { 'sql', 'mysql', 'plsql' },
   dependencies = {
     { 'tpope/vim-dadbod',                     lazy = true },
     { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
@@ -11,7 +12,6 @@ return {
     'DBUIFindBuffer',
   },
   init = function()
-    -- Your DBUI configuration
     vim.g.db_ui_use_nerd_fonts = 1
     vim.g.db_ui_winwidth = 30
     vim.g.db_ui_execute_on_save = 0

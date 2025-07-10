@@ -4,7 +4,7 @@ return {
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "lua", "python", "javascript", "rust", "go", "julia" },
+        ensure_installed = { "lua", "python", "javascript", "go", "julia", "markdown", "yaml", "bash"},
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,

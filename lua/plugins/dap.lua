@@ -21,7 +21,7 @@ return {
       local dap = require("dap")
       local dapui = require("dapui")
 
-      vim.fn.sign_define('DapBreakpoint', { text = '⏭ ', texthl = '', linehl = '', numhl = '' })
+      vim.fn.sign_define('DapBreakpoint', { text = ' ', texthl = '', linehl = '', numhl = '' })
 
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()

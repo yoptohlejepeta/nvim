@@ -41,7 +41,7 @@ return {
         -- For example,
         --
         -- repl_open_cmd = {
-          -- view.split.vertical.rightbelow("%40"), -- cmd_1: open a repl to the right
+        -- view.split.vertical.rightbelow("%40"), -- cmd_1: open a repl to the right
         --   view.split.rightbelow("%25")  -- cmd_2: open a repl below
         -- }
 

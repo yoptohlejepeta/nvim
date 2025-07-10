@@ -34,10 +34,5 @@ return {
         pattern = [[\b(KEYWORDS):]],
       },
     },
-    config = function(_, opts)
-      require("todo-comments").setup(opts)
-      vim.keymap.set("n", "]t", require("todo-comments").jump_next, { desc = "Next TODO" })
-      vim.keymap.set("n", "[t", require("todo-comments").jump_prev, { desc = "Previous TODO" })
-    end,
   },
 }

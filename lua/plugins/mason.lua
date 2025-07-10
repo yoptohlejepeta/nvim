@@ -18,6 +18,7 @@ return {
         ensure_installed = {
           "pyright",
           "gopls",
+          "rust_analyzer",
           "julials",
           "lua_ls",
           "ruff",
@@ -25,7 +26,8 @@ return {
           "html",
           "cssls",
           "marksman",
-          "yamlls"
+          "yamlls",
+          "sqls",
         },
         automatic_installation = true,
       })

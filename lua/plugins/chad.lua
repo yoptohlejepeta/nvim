@@ -12,18 +12,10 @@ return {
       require("base46").load_all_highlights()
     end,
   },
-  {
-    "nvchad/volt",
-    lazy = false,
-  },
-  {
-    "nvzone/typr",
-    dependencies = "nvzone/volt",
-    opts = {},
-    cmd = { "Typr", "TyprStats" },
-  },
+  { "nvchad/volt", lazy = false },
   {
     "nvzone/minty",
+    dependecioes = { "nvchad/volt" },
     cmd = { "Shades", "Huefy" },
   },
 }

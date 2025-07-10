@@ -15,6 +15,7 @@ return {
     local servers = {
       "pyright",
       "gopls",
+      "rust_analyzer",
       "julials",
       "lua_ls",
       "ruff",
@@ -22,11 +23,11 @@ return {
       "html",
       "cssls",
       "tinymist",
-      "zls",
       "dockerls",
       "docker_compose_language_service",
       "marksman",
       "yamlls",
+      "sqls",
     }
 
     for _, server in ipairs(servers) do
@@ -35,7 +36,7 @@ return {
       if server == "lua_ls" then
         opts.settings = {
           Lua = {
-            diagnostics = { globals = { "vim", "snacks" } },
+            diagnostics = { globals = { "vim", "Snacks" } },
           },
         }
       elseif server == "gopls" then
@@ -50,7 +51,6 @@ return {
         }
       elseif server == "tinymist" then
         opts = {
-          capabilities = capabilities,
           offset_encoding = "utf-8",
           lint = {
             enabled = true,
@@ -62,6 +62,19 @@ return {
           formatterMode = "typstyle",
           semanticTokens = "disable"
         }
+        -- elseif server == "pyright" then
+        --   -- opts.settings.python.analysis = {
+        --   --   diagnosticMode = "workspace"
+        --   -- }
+        --   opts = {
+        --     settings = {
+        --       python = {
+        --         analysis = {
+        --           diagnosticMode = "workspace"
+        --         }
+        --       }
+        --     }
+        --   }
       end
 
       lspconfig[server].setup(opts)
