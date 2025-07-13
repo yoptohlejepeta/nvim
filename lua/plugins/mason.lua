@@ -28,6 +28,7 @@ return {
           "marksman",
           "yamlls",
           "sqls",
+          "templ",
         },
         automatic_installation = true,
       })

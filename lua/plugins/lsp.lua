@@ -28,6 +28,7 @@ return {
       "marksman",
       "yamlls",
       "sqls",
+      "templ",
     }
 
     for _, server in ipairs(servers) do

@@ -119,7 +119,7 @@ return {
           require("snacks").lazygit.open()
         end
       },
-      { "<leader>d", group = "diagnostics", mode = "n" },
+      { "<leader>d", group = "debug", mode = "n" },
       { "<localleader>l", group = "latex", mode = "n", icon = { icon = " ", color = "green" } },
       { "<localleader>t", group = "typst", desc = "typst preview", mode = "n", icon = { icon = " ", color = "brown" } },
       { "<localleader>tl", "<cmd>TypstPreviewToggle<CR>", desc = "live preview (toggle)", mode = "n" },
