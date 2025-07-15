@@ -11,10 +11,9 @@ return {
 
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 		local lspconfig = require("lspconfig")
-		local configs = require("lspconfig.configs")
 
 		local servers = {
-			"pyrefly",
+			"pyright",
 			"gopls",
 			"rust_analyzer",
 			"julials",
@@ -31,16 +30,6 @@ return {
 			"sqls",
 			"templ",
 		}
-
-		if not configs.pyrefly then
-			configs.pyrefly = {
-				default_config = {
-					cmd = { "pyrefly", "lsp" },
-					filetypes = { "python" },
-					root_dir = require("lspconfig.util").find_git_ancestor,
-				},
-			}
-		end
 
 		for _, server in ipairs(servers) do
 			local opts = { capabilities = capabilities }
@@ -74,11 +63,6 @@ return {
 					formatterMode = "typstyle",
 					semanticTokens = "disable",
 				}
-				-- elseif server == "pyrefly" then
-				-- 	opts = {
-				-- 		cmd = { "pyrefly", "lsp" },
-				-- 		filetypes = { "python" },
-				-- 	}
 			end
 
 			lspconfig[server].setup(opts)

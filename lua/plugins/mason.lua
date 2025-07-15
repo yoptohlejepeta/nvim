@@ -16,7 +16,7 @@ return {
 			require("mason-lspconfig").setup({
 				automatic_enable = false,
 				ensure_installed = {
-					"pyrefly",
+					"pyright",
 					"gopls",
 					"rust_analyzer",
 					"julials",
