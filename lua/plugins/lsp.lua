@@ -29,6 +29,7 @@ return {
 			"yamlls",
 			"sqls",
 			"templ",
+			"jsonls",
 		}
 
 		for _, server in ipairs(servers) do

@@ -29,6 +29,7 @@ return {
 					"yamlls",
 					"sqls",
 					"templ",
+					"jsonls",
 				},
 				automatic_installation = true,
 			})
