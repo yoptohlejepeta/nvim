@@ -78,7 +78,5 @@ return {
 
 		vim.keymap.set("n", "gb", "<C-o>", { desc = "Go Back from Definition" })
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
-		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
-		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 	end,
 }
