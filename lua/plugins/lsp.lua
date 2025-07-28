@@ -13,6 +13,8 @@ return {
 		local lspconfig = require("lspconfig")
 
 		local servers = {
+      "clangd",
+      "hls",
 			"pyright",
 			"gopls",
 			"rust_analyzer",

@@ -2,7 +2,7 @@ local M = {}
 
 M.base46 = {
   enabled = true,
-  theme = "gruvchad",
+  theme = "kanagawa-dragon",
 }
 
 M.ui = {
