@@ -4,7 +4,6 @@ return {
   opts = {
     preset = "helix",
     spec = {
-      { "<leader>th", callback = function() require("nvchad.themes").open() end },
       { "<leader>w", hidden = true },
       { "<leader>q", hidden = true },
       { "<leader>f", group = "find", mode = "n", icon = { icon = " ", color = "white" } },
