@@ -14,25 +14,19 @@ return {
         "<leader>fb",
         desc = "buffers",
         mode = "n",
-        callback = function()
-          require("snacks").picker.buffers()
-        end,
+        callback = function() require("snacks").picker.buffers() end,
       },
       {
         "<leader>fh",
         desc = "help tags",
         mode = "n",
-        callback = function()
-          require("snacks").picker.help()
-        end,
+        callback = function() require("snacks").picker.help() end,
       },
       {
         "<leader>fl",
         desc = "lines",
         mode = "n",
-        callback = function()
-          require("snacks").picker.lines({ layout = { preset = "ivy" } })
-        end
+        callback = function() require("snacks").picker.lines({ layout = { preset = "ivy" } }) end
       },
       {
         "<leader>ft",
@@ -148,6 +142,7 @@ return {
         icon = { icon = "󰛯 ", color = "white" }
       },
       { "<C-\\>", callback = function() require("snacks").terminal.toggle() end, desc = "toggle terminal" },
+      { "<C-|>", callback = function() require("snacks").terminal.open() end, desc = "temporary terminal" },
       {
         "gd",
         desc = "goto definition",

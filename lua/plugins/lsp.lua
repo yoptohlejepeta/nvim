@@ -1,84 +1,85 @@
 return {
-	"neovim/nvim-lspconfig",
-	dependencies = {
-		"L3MON4D3/LuaSnip",
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"saghen/blink.cmp",
-	},
-	config = function()
-		vim.lsp.inlay_hint.enable(true)
+  "neovim/nvim-lspconfig",
+  dependencies = {
+    "L3MON4D3/LuaSnip",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "saghen/blink.cmp",
+  },
+  config = function()
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
+    local lspconfig = require("lspconfig")
 
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
-		local lspconfig = require("lspconfig")
-
-		local servers = {
+    local servers = {
       "clangd",
       "hls",
-			"pyright",
-			"gopls",
-			"rust_analyzer",
-			"julials",
-			"lua_ls",
-			"ruff",
-			"texlab",
-			"html",
-			"cssls",
-			"tinymist",
-			"dockerls",
-			"docker_compose_language_service",
-			"marksman",
-			"yamlls",
-			"sqls",
-			"templ",
-			"jsonls",
-		}
+      "pyright",
+      "gopls",
+      "rust_analyzer",
+      "julials",
+      "lua_ls",
+      "ruff",
+      "texlab",
+      "html",
+      "cssls",
+      "tinymist",
+      "dockerls",
+      "docker_compose_language_service",
+      "marksman",
+      "yamlls",
+      "sqls",
+      "templ",
+      "jsonls",
+      "taplo",
+    }
 
-		for _, server in ipairs(servers) do
-			local opts = { capabilities = capabilities }
+    for _, server in ipairs(servers) do
+      local opts = { capabilities = capabilities }
 
-			if server == "lua_ls" then
-				opts.settings = {
-					Lua = {
-						diagnostics = { globals = { "vim", "Snacks" } },
-					},
-				}
-			elseif server == "gopls" then
-				opts.settings = {
-					gopls = {
-						["ui.inlayhints.hints"] = {
-							compositeLiteralFields = true,
-							constantValues = true,
-							parameterNames = true,
-						},
-					},
-				}
-			elseif server == "tinymist" then
-				opts = {
-					offset_encoding = "utf-8",
-					lint = {
-						enabled = true,
-						when = "onType",
-					},
-				}
-				opts.settings = {
-					exportPdf = "onType",
-					formatterMode = "typstyle",
-					semanticTokens = "disable",
-				}
-			end
+      if server == "lua_ls" then
+        opts.settings = {
+          Lua = {
+            diagnostics = { globals = { "vim", "Snacks" } },
+          },
+        }
+      elseif server == "sqls" then
+        opts.filetypes = { "sql", "mysql", "plsql" }
+      elseif server == "gopls" then
+        opts.settings = {
+          gopls = {
+            ["ui.inlayhints.hints"] = {
+              compositeLiteralFields = true,
+              constantValues = true,
+              parameterNames = true,
+            },
+          },
+        }
+      elseif server == "tinymist" then
+        opts = {
+          offset_encoding = "utf-8",
+          lint = {
+            enabled = true,
+            when = "onType",
+          },
+        }
+        opts.settings = {
+          exportPdf = "onType",
+          formatterMode = "typstyle",
+          semanticTokens = "disable",
+        }
+      end
 
-			lspconfig[server].setup(opts)
-		end
+      lspconfig[server].setup(opts)
+    end
 
-		vim.diagnostic.config({
-			virtual_text = true,
-			signs = false,
-			update_in_insert = true,
-			severity_sort = true,
-		})
+    vim.diagnostic.config({
+      virtual_text = true,
+      signs = false,
+      update_in_insert = true,
+      severity_sort = true,
+    })
 
-		vim.keymap.set("n", "gb", "<C-o>", { desc = "Go Back from Definition" })
-		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
-	end,
+    vim.keymap.set("n", "gb", "<C-o>", { desc = "Go Back from Definition" })
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })
+  end,
 }

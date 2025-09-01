@@ -6,6 +6,7 @@ return {
     config = function()
       require("yazi").setup({
         open_for_directories = true,
+        yazi_floating_window_border = "none",
       })
     end,
     init = function()

@@ -35,6 +35,7 @@ return {
           "sqls",
           "templ",
           "jsonls",
+          "taplo",
         },
         automatic_installation = true,
       })

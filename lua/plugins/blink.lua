@@ -19,7 +19,6 @@ return {
 				},
 			},
 			menu = {
-				border = "rounded",
 				draw = {
 					components = {
 						kind_icon = {
