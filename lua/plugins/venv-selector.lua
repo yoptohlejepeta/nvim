@@ -10,6 +10,11 @@ return {
     { ",v", "<cmd>VenvSelect<cr>" },
   },
   opts = {
-    options = { picker = "telescope" }
+    options = { picker = "telescope" },
+    search = {
+      uv = {
+        command = "$FD '/python$' ~/.cache/uv/virtualenvs/ --full-path --color never"
+      }
+    }
   },
 }
