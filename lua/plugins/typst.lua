@@ -11,8 +11,8 @@ return {
       follow_cursor = true,
     },
   },
-  {
-    "kaarmu/typst.vim",
-    ft = "typst",
-  }
+  -- {
+  --   "kaarmu/typst.vim",
+  --   ft = "typst",
+  -- }
 }

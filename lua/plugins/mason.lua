@@ -19,6 +19,7 @@ return {
           "clangd",
           "hls",
           "pyright",
+          -- "ty"
           "gopls",
           "rust_analyzer",
           "julials",
@@ -36,6 +37,7 @@ return {
           "templ",
           "jsonls",
           "taplo",
+          "harper_ls",
         },
         automatic_installation = true,
       })

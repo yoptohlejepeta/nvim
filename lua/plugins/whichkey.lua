@@ -3,6 +3,9 @@ return {
   event = "VeryLazy",
   opts = {
     preset = "helix",
+    win = {
+      border = "solid",
+    },
     spec = {
       { "<leader>th", callback = function() require("nvchad.themes").open() end },
       { "<leader>w", hidden = true },
@@ -26,7 +29,7 @@ return {
         "<leader>fl",
         desc = "lines",
         mode = "n",
-        callback = function() require("snacks").picker.lines({ layout = { preset = "ivy" } }) end
+        callback = function() require("snacks").picker.lines() end
       },
       {
         "<leader>ft",
@@ -41,7 +44,7 @@ return {
         desc = "lsp symbols",
         mode = "n",
         callback = function()
-          require("snacks").picker.lsp_symbols()
+          require("snacks").picker.lsp_symbols({ layout = { preset = "right" } })
         end
       },
       {
@@ -49,7 +52,7 @@ return {
         desc = "workspace lsp symbols",
         mode = "n",
         callback = function()
-          require("snacks").picker.lsp_workspace_symbols()
+          require("snacks").picker.lsp_workspace_symbols({ layout = { preset = "right" } })
         end
       },
       {
@@ -142,7 +145,7 @@ return {
         icon = { icon = "󰛯 ", color = "white" }
       },
       { "<C-\\>", callback = function() require("snacks").terminal.toggle() end, desc = "toggle terminal" },
-      { "<C-|>", callback = function() require("snacks").terminal.open() end, desc = "temporary terminal" },
+      { "<C-|>",  callback = function() require("snacks").terminal.open() end,   desc = "temporary terminal" },
       {
         "gd",
         desc = "goto definition",

@@ -14,6 +14,7 @@ return {
       "clangd",
       "hls",
       "pyright",
+      -- "ty",
       "gopls",
       "rust_analyzer",
       "julials",
@@ -31,6 +32,7 @@ return {
       "templ",
       "jsonls",
       "taplo",
+      -- "harper_ls",
     }
 
     for _, server in ipairs(servers) do
