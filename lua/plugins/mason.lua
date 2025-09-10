@@ -38,6 +38,8 @@ return {
           "jsonls",
           "taplo",
           "harper_ls",
+          "elmls",
+          -- "elm-format",
         },
         automatic_installation = true,
       })

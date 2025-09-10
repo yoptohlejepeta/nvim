@@ -33,6 +33,8 @@ return {
       "jsonls",
       "taplo",
       -- "harper_ls",
+      "elmls",
+      -- "elm-format",
     }
 
     for _, server in ipairs(servers) do

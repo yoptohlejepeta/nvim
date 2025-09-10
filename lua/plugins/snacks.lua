@@ -32,6 +32,40 @@ return {
             },
             { win = "preview", title = "{preview}", border = "solid", width = 0.5 },
           },
+        },
+        ivy = {
+          layout = {
+            box = "vertical",
+            backdrop = false,
+            row = -1,
+            width = 0,
+            height = 0.4,
+            border = "solid",
+            title = " {title} {live} {flags}",
+            title_pos = "left",
+            { win = "input", height = 1, border = "solid" },
+            {
+              box = "horizontal",
+              { win = "list",    border = "none" },
+              { win = "preview", title = "{preview}", width = 0.6, border = "solid" },
+            },
+          },
+        },
+        vertical = {
+          layout = {
+            backdrop = false,
+            width = 0.5,
+            min_width = 80,
+            height = 0.8,
+            min_height = 30,
+            box = "vertical",
+            border = "solid",
+            title = "{title} {live} {flags}",
+            title_pos = "center",
+            { win = "input",   height = 1,          border = "solid" },
+            { win = "list",    border = "none" },
+            { win = "preview", title = "{preview}", height = 0.4,     border = "solid" },
+          },
         }
       },
       sources = {
@@ -110,7 +144,13 @@ return {
         keys = {
           { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
           { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+          { icon = " ", key = "P", desc = "Projects", action = ":lua Snacks.dashboard.pick('projects')" },
+          {
+            icon = " ",
+            key = "c",
+            desc = "Config",
+            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+          },
           { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = "󰣪 ", key = "M", desc = "Mason", action = ":Mason", enabled = package.loaded.lazy ~= nil },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },

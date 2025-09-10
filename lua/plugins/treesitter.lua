@@ -17,6 +17,8 @@ return {
           "templ",
           "html",
           "rust",
+          "typst",
+          "elm",
         },
         highlight = {
           enable = true,

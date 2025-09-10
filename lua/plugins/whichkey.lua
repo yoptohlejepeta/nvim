@@ -154,7 +154,8 @@ return {
       },
       -- { "<localleader>d", "<cmd>DBUIToggle<CR>", desc = "db view", icon = { icon = " ", color = "white" } },
       { "<localleader>i", callback = function() require("snacks").image.hover() end, desc = "image preview", icon = { icon = " ", color = "purple" } },
-      { "<leader>ld", callback = function() require("snacks").terminal("lazydocker") end, desc = "lazydocker", icon = { icon = " ", color = "azure" } }
+      { "<leader>ld", callback = function() require("snacks").terminal("lazydocker") end, desc = "lazydocker", icon = { icon = " ", color = "azure" } },
+      { "<leader>y", callback = function() require("snacks").terminal("yazi") end, desc = "yazi", icon = { icon = "󰇥 ", color = "yellow" } }
     }
   }
 }
