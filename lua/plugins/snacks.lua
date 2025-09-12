@@ -64,6 +64,23 @@ return {
             title_pos = "center",
             { win = "input",   height = 1,          border = "solid" },
             { win = "list",    border = "none" },
+            { win = "preview", title = "{preview}", height = 0.4,    border = "solid" },
+          },
+        },
+        select = {
+          preview = false,
+          layout = {
+            backdrop = true,
+            width = 0.5,
+            min_width = 80,
+            height = 0.4,
+            min_height = 3,
+            box = "vertical",
+            border = "solid",
+            title = "{title}",
+            title_pos = "center",
+            { win = "input",   height = 1,          border = "solid" },
+            { win = "list",    border = "none" },
             { win = "preview", title = "{preview}", height = 0.4,     border = "solid" },
           },
         }

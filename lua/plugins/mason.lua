@@ -39,7 +39,7 @@ return {
           "taplo",
           "harper_ls",
           "elmls",
-          -- "elm-format",
+          -- "elm-format", -- FIXME: why doesnt this work?
         },
         automatic_installation = true,
       })

@@ -4,7 +4,7 @@ return {
   opts = {
     preset = "helix",
     win = {
-      border = "solid",
+      border = "single",
     },
     spec = {
       { "<leader>th", callback = function() require("nvchad.themes").open() end },
