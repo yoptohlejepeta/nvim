@@ -9,7 +9,7 @@
   "csvview.nvim": { "branch": "main", "commit": "a74fdee6810f17e9baadbfe7d6488f61954e6ac8" },
   "dracula": { "branch": "main", "commit": "041d923368d540a1e438989ce8f915628081a56a" },
   "friendly-snippets": { "branch": "main", "commit": "572f5660cf05f8cd8834e096d7b4c921ba18e175" },
-  "gitsigns.nvim": { "branch": "main", "commit": "6e3c66548035e50db7bd8e360a29aec6620c3641" },
+  "gitsigns.nvim": { "branch": "main", "commit": "f780609807eca1f783a36a8a31c30a48fbe150c5" },
   "hardtime.nvim": { "branch": "main", "commit": "6d7664d5bdfaea44c5f50b29f5239fab7b00c273" },
   "helpview.nvim": { "branch": "main", "commit": "10a4fc23876c879bcd364b7d21564e905ff49d36" },
   "iron.nvim": { "branch": "master", "commit": "d44ef40c8e1fbacaeec33d170699097ac65c66d0" },
