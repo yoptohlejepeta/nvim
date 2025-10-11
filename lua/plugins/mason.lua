@@ -19,7 +19,6 @@ return {
           "clangd",
           "hls",
           "pyright",
-          -- "ty"
           "gopls",
           "rust_analyzer",
           "julials",
@@ -37,9 +36,10 @@ return {
           "templ",
           "jsonls",
           "taplo",
-          "harper_ls",
           "elmls",
-          -- "elm-format", -- FIXME: why doesnt this work?
+          "zls",
+          "r_language_server",
+          "bashls"
         },
         automatic_installation = true,
       })

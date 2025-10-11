@@ -3,8 +3,9 @@ return {
   event = "VeryLazy",
   opts = {
     preset = "helix",
+    delay = 500,
     win = {
-      border = "single",
+      border = "solid"
     },
     spec = {
       { "<leader>th", callback = function() require("nvchad.themes").open() end },

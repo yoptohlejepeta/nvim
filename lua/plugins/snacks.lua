@@ -16,75 +16,6 @@ return {
       }
     },
     picker = {
-      layouts = {
-        default = {
-          layout = {
-            box = "horizontal",
-            width = 0.8,
-            min_width = 120,
-            height = 0.8,
-            {
-              box = "vertical",
-              border = "solid",
-              title = "{title} {live} {flags}",
-              { win = "input", height = 1,     border = "none" },
-              { win = "list",  border = "none" },
-            },
-            { win = "preview", title = "{preview}", border = "solid", width = 0.5 },
-          },
-        },
-        ivy = {
-          layout = {
-            box = "vertical",
-            backdrop = false,
-            row = -1,
-            width = 0,
-            height = 0.4,
-            border = "solid",
-            title = " {title} {live} {flags}",
-            title_pos = "left",
-            { win = "input", height = 1, border = "solid" },
-            {
-              box = "horizontal",
-              { win = "list",    border = "none" },
-              { win = "preview", title = "{preview}", width = 0.6, border = "solid" },
-            },
-          },
-        },
-        vertical = {
-          layout = {
-            backdrop = false,
-            width = 0.5,
-            min_width = 80,
-            height = 0.8,
-            min_height = 30,
-            box = "vertical",
-            border = "solid",
-            title = "{title} {live} {flags}",
-            title_pos = "center",
-            { win = "input",   height = 1,          border = "solid" },
-            { win = "list",    border = "none" },
-            { win = "preview", title = "{preview}", height = 0.4,    border = "solid" },
-          },
-        },
-        select = {
-          preview = false,
-          layout = {
-            backdrop = true,
-            width = 0.5,
-            min_width = 80,
-            height = 0.4,
-            min_height = 3,
-            box = "vertical",
-            border = "solid",
-            title = "{title}",
-            title_pos = "center",
-            { win = "input",   height = 1,          border = "solid" },
-            { win = "list",    border = "none" },
-            { win = "preview", title = "{preview}", height = 0.4,     border = "solid" },
-          },
-        }
-      },
       sources = {
         files = {
           hidden = true,
@@ -174,7 +105,7 @@ return {
         },
       },
       sections = {
-        { section = "header", pane = 2 },
+        -- { section = "header", pane = 2 },
         { section = "keys", gap = 1, padding = 1 },
         { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
         { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },

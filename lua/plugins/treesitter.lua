@@ -8,6 +8,7 @@ return {
           "lua",
           "python",
           "javascript",
+          "dockerfile",
           "go",
           "julia",
           "markdown",
@@ -16,9 +17,11 @@ return {
           "regex",
           "templ",
           "html",
-          "rust",
           "typst",
           "elm",
+          "haskell",
+          "gitcommit",
+          "zig"
         },
         highlight = {
           enable = true,

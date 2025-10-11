@@ -8,13 +8,14 @@ return {
   },
   config = function()
     local capabilities = require("blink.cmp").get_lsp_capabilities()
-    local lspconfig = require("lspconfig")
+    -- local lspconfig = require("lspconfig")
+
+    vim.lsp.inlay_hint.enable()
 
     local servers = {
       "clangd",
       "hls",
       "pyright",
-      -- "ty",
       "gopls",
       "rust_analyzer",
       "julials",
@@ -32,9 +33,10 @@ return {
       "templ",
       "jsonls",
       "taplo",
-      -- "harper_ls",
       "elmls",
-      -- "elm-format",
+      "zls",
+      "bashls",
+      "r_language_server"
     }
 
     for _, server in ipairs(servers) do
@@ -43,7 +45,7 @@ return {
       if server == "lua_ls" then
         opts.settings = {
           Lua = {
-            diagnostics = { globals = { "vim", "Snacks" } },
+            diagnostics = { globals = { "vim" } },
           },
         }
       elseif server == "sqls" then
@@ -59,21 +61,22 @@ return {
           },
         }
       elseif server == "tinymist" then
-        opts = {
-          offset_encoding = "utf-8",
-          lint = {
-            enabled = true,
-            when = "onType",
-          },
-        }
         opts.settings = {
+          {
+            offset_encoding = "utf-8",
+            lint = {
+              enabled = true,
+              when = "onType",
+            },
+          },
           exportPdf = "onType",
           formatterMode = "typstyle",
           semanticTokens = "disable",
         }
       end
 
-      lspconfig[server].setup(opts)
+      vim.lsp.config[server] = opts
+      vim.lsp.enable(server)
     end
 
     vim.diagnostic.config({

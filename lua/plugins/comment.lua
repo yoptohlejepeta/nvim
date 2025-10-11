@@ -8,17 +8,10 @@ return {
         padding = true,
         sticky = true,
         toggler = {
-          line = "<leader>/",
-          block = "<leader>cb",
+          block = "gcb",
         },
         opleader = {
-          line = "<leader>/",
-          block = "<leader>cb",
-        },
-        extra = {
-          above = "<leader>cO",
-          below = "<leader>co",
-          eol = "<leader>cA",
+          block = "gcb",
         },
         mappings = {
           basic = true,
