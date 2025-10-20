@@ -9,5 +9,5 @@ vim.opt.smartindent = true
 vim.opt.scroll = 10
 vim.opt.wrap = false
 
-vim.opt.fillchars:append { eob = " " }
+vim.opt.fillchars:append({ eob = " " })
 vim.opt.clipboard = "unnamedplus"

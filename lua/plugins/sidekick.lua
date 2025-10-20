@@ -1,14 +1,14 @@
 return {
-  "folke/sidekick.nvim",
-  opts = {
-    -- add any options here
-    cli = {
-      mux = {
-        -- backend = "zellij",
-        enabled = false,
-      },
-    },
-  },
+	"folke/sidekick.nvim",
+	opts = {
+		-- add any options here
+		cli = {
+			mux = {
+				-- backend = "zellij",
+				enabled = false,
+			},
+		},
+	},
   -- stylua: ignore
   keys = {
     {
