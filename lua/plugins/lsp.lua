@@ -36,7 +36,6 @@ return {
 			"elmls",
 			"zls",
 			"bashls",
-			"air",
 			"copilot",
 		}
 

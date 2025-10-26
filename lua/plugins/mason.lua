@@ -38,7 +38,6 @@ return {
 					"taplo",
 					"elmls",
 					"zls",
-					"air",
 					"bashls",
 					"copilot",
 				},

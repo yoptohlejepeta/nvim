@@ -8,12 +8,6 @@ return {
 			border = "solid",
 		},
 		spec = {
-			{
-				"<leader>th",
-				callback = function()
-					require("nvchad.themes").open()
-				end,
-			},
 			{ "<leader>w", hidden = true },
 			{ "<leader>q", hidden = true },
 			{ "<leader>f", group = "find", mode = "n", icon = { icon = " ", color = "white" } },
@@ -21,82 +15,50 @@ return {
 				"<leader>ff",
 				desc = "files",
 				mode = "n",
-				callback = function()
-					require("snacks").picker.files()
-				end,
+				callback = ":Pick files<cr>",
 			},
 			{
 				"<leader>fg",
 				desc = "live grep",
 				mode = "n",
-				callback = function()
-					require("snacks").picker.grep({ hidden = true })
-				end,
+				callback = ":Pick grep_live<cr>",
 			},
 			{
-				"<leader>fb",
+				"<leader><leader>",
 				desc = "buffers",
 				mode = "n",
-				callback = function()
-					require("snacks").picker.buffers()
-				end,
+				callback = ":Pick buffers<cr>",
 			},
-			{
-				"<leader>fh",
-				desc = "help tags",
-				mode = "n",
-				callback = function()
-					require("snacks").picker.help()
-				end,
-			},
-			{
-				"<leader>fl",
-				desc = "lines",
-				mode = "n",
-				callback = function()
-					require("snacks").picker.lines()
-				end,
-			},
+			-- {
+			-- 	"<leader>fl",
+			-- 	desc = "lines",
+			-- 	mode = "n",
+			-- 	callback = function()
+			-- 		require("snacks.picker").lines()
+			-- 	end,
+			-- },
 			{
 				"<leader>ft",
 				desc = "todos",
 				mode = "n",
-				callback = function()
-					require("snacks").picker.todo_comments()
-				end,
+				callback = ":Trouble todo<cr>",
 			},
-			{
-				"<leader>fs",
-				desc = "lsp symbols",
-				mode = "n",
-				callback = function()
-					require("snacks").picker.lsp_symbols({ layout = { preset = "right" } })
-				end,
-			},
-			{
-				"<leader>fS",
-				desc = "workspace lsp symbols",
-				mode = "n",
-				callback = function()
-					require("snacks").picker.lsp_workspace_symbols({ layout = { preset = "right" } })
-				end,
-			},
-			{
-				"<leader>x",
-				desc = "delete current bufffer",
-				mode = "n",
-				callback = function()
-					require("snacks").bufdelete.delete()
-				end,
-			},
-			{
-				"<leader>X",
-				desc = "delete all other bufers",
-				mode = "n",
-				callback = function()
-					require("snacks").bufdelete.other()
-				end,
-			},
+			-- {
+			-- 	"<leader>x",
+			-- 	desc = "delete current bufffer",
+			-- 	mode = "n",
+			-- 	callback = function()
+			-- 		require("snacks").bufdelete.delete()
+			-- 	end,
+			-- },
+			-- {
+			-- 	"<leader>X",
+			-- 	desc = "delete all other bufers",
+			-- 	mode = "n",
+			-- 	callback = function()
+			-- 		require("snacks").bufdelete.other()
+			-- 	end,
+			-- },
 			{ "<leader>g", group = "git", mode = "n" },
 			{
 				"<leader>go",
@@ -114,41 +76,22 @@ return {
 				end,
 				desc = "git branches",
 			},
-			{ "<leader>c", group = "comment/code action", mode = "n", icon = { icon = " ", color = "green" } },
-			{ "<leader>t", group = "theme", mode = "n", icon = { icon = " ", color = "white" } },
-			{
-				"<leader>e",
-				desc = "Toggle file explorer",
-				mode = "n",
-				callback = function()
-					require("snacks").explorer()
-				end,
-			},
-			{
-				"<leader>E",
-				desc = "Find current file in explorer",
-				mode = "n",
-				callback = function()
-					require("snacks").picker.explorer({ follow_file = true })
-				end,
-			},
-			{ "g", group = "Goto", mode = "n" },
-			{
-				"grr",
-				callback = function()
-					require("snacks.picker").lsp_references()
-				end,
-				nowait = true,
-				desc = "references",
-			},
-			{
-				"gh",
-				callback = function()
-					require("snacks").dashboard({ example = "compact_files" })
-				end,
-				desc = "home (dashboard)",
-				icon = { icon = " ", color = "white" },
-			},
+			-- {
+			-- 	"<leader>e",
+			-- 	desc = "Toggle file explorer",
+			-- 	mode = "n",
+			-- 	callback = function()
+			-- 		require("snacks").explorer()
+			-- 	end,
+			-- },
+			-- {
+			-- 	"<leader>E",
+			-- 	desc = "Find current file in explorer",
+			-- 	mode = "n",
+			-- 	callback = function()
+			-- 		require("snacks").picker.explorer({ follow_file = true })
+			-- 	end,
+			-- },
 			{
 				"<leader>gl",
 				mode = "n",
@@ -176,22 +119,6 @@ return {
 				desc = "find icons",
 			},
 			{
-				"<leader>fd",
-				function()
-					require("snacks").picker.diagnostics_buffer()
-				end,
-				desc = "search buffer diagnostics",
-				icon = { icon = "󰛯 ", color = "white" },
-			},
-			{
-				"<leader>fD",
-				callback = function()
-					require("snacks").picker.diagnostics()
-				end,
-				desc = "search diagnostics",
-				icon = { icon = "󰛯 ", color = "white" },
-			},
-			{
 				"<C-\\>",
 				callback = function()
 					require("snacks").terminal.toggle()
@@ -213,7 +140,6 @@ return {
 					require("snacks").picker.lsp_definitions()
 				end,
 			},
-			-- { "<localleader>d", "<cmd>DBUIToggle<CR>", desc = "db view", icon = { icon = " ", color = "white" } },
 			{
 				"<localleader>i",
 				callback = function()
@@ -238,6 +164,12 @@ return {
 				desc = "yazi",
 				icon = { icon = "󰇥 ", color = "yellow" },
 			},
+			{ "<leader>s", group = "iron send", mode = "n", icon = " " },
+			{ "<leader>r", group = "iron repl", mode = "n", icon = " " },
+			{ "<leader>m", group = "iron mark", mode = "n", icon = "󰙒 " },
+			{ "<leader>a", group = "sidekick", mode = "n", icon = " " },
+			{ "]w", callback = "<C-w>l", mode = "n", desc = "window right" },
+			{ "[w", callback = "<C-w>h", mode = "n", desc = "window left" },
 		},
 	},
 }

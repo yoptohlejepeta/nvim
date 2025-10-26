@@ -5,17 +5,20 @@ return {
 		priority = 1000,
 		opts = {},
 	},
-	{ "Mofiqul/dracula.nvim", name = "dracula", priority = 1000 },
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "mellow-theme/mellow.nvim", name = "mellow", priority = 1000 },
 	{
-		"bluz71/vim-moonfly-colors",
-		name = "moonfly",
-		lazy = false,
-		priority = 1000,
+		"vague-theme/vague.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other plugins
 		config = function()
-			vim.g.moonflyWinSeparator = 2
-			vim.g.moonflyVirtualTextColor = true
-			vim.g.moonflyCursorColor = true
+			-- NOTE: you do not need to call setup if you don't want to.
+			require("vague").setup({
+				-- optional configuration here
+        style = {
+          strings = "none"
+        }
+			})
+			vim.cmd("colorscheme vague")
 		end,
 	},
 }
