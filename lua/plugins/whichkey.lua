@@ -4,9 +4,6 @@ return {
 	opts = {
 		preset = "helix",
 		delay = 500,
-		win = {
-			border = "solid",
-		},
 		spec = {
 			{ "<leader>w", hidden = true },
 			{ "<leader>q", hidden = true },
@@ -15,7 +12,7 @@ return {
 				"<leader>ff",
 				desc = "files",
 				mode = "n",
-				callback = ":Pick files<cr>",
+				callback = ":Pick files tool='fd'<cr>",
 			},
 			{
 				"<leader>fg",

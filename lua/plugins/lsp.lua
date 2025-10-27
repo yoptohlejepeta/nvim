@@ -37,6 +37,7 @@ return {
 			"zls",
 			"bashls",
 			"copilot",
+      "r_language_server",
 		}
 
 		for _, server in ipairs(servers) do
