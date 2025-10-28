@@ -36,7 +36,6 @@ return {
 			"elmls",
 			"zls",
 			"bashls",
-			"copilot",
       "r_language_server",
 		}
 
