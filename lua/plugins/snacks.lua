@@ -15,6 +15,20 @@ return {
 				float = false,
 			},
 		},
+		picker = {
+			sources = {
+				files = {
+					hidden = true,
+					ignored = true,
+					ignore = {
+						git_ignored = true,
+						patterns = { ".venv", ".git" },
+					},
+					include = { ".env" },
+					exclude = { ".venv", "venv", "node_modules", "*cache*", ".hypothesis", ".coverage" },
+				},
+			},
+		},
 		terminal = {
 			win = {
 				wo = {

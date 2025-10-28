@@ -12,50 +12,66 @@ return {
 				"<leader>ff",
 				desc = "files",
 				mode = "n",
-				callback = ":Pick files tool='fd'<cr>",
+				callback = function()
+					require("snacks").picker.files()
+				end,
 			},
 			{
 				"<leader>fg",
 				desc = "live grep",
 				mode = "n",
-				callback = ":Pick grep_live<cr>",
+				callback = function()
+					require("snacks").picker.grep({ hidden = true })
+				end,
 			},
 			{
 				"<leader><leader>",
 				desc = "buffers",
 				mode = "n",
-				callback = ":Pick buffers<cr>",
+				callback = function()
+					require("snacks").picker.buffers()
+				end,
 			},
-			-- {
-			-- 	"<leader>fl",
-			-- 	desc = "lines",
-			-- 	mode = "n",
-			-- 	callback = function()
-			-- 		require("snacks.picker").lines()
-			-- 	end,
-			-- },
 			{
 				"<leader>ft",
 				desc = "todos",
 				mode = "n",
-				callback = ":Trouble todo<cr>",
+				callback = function()
+					require("snacks").picker.todo_comments()
+				end,
 			},
-			-- {
-			-- 	"<leader>x",
-			-- 	desc = "delete current bufffer",
-			-- 	mode = "n",
-			-- 	callback = function()
-			-- 		require("snacks").bufdelete.delete()
-			-- 	end,
-			-- },
-			-- {
-			-- 	"<leader>X",
-			-- 	desc = "delete all other bufers",
-			-- 	mode = "n",
-			-- 	callback = function()
-			-- 		require("snacks").bufdelete.other()
-			-- 	end,
-			-- },
+			{
+				"<leader>fs",
+				desc = "lsp symbols",
+				mode = "n",
+				callback = function()
+					require("snacks").picker.lsp_symbols({ layout = { preset = "right" } })
+				end,
+			},
+			{
+				"<leader>fS",
+				desc = "workspace lsp symbols",
+				mode = "n",
+				callback = function()
+					require("snacks").picker.lsp_workspace_symbols({ layout = { preset = "right" } })
+				end,
+			},
+			{
+				"<leader>x",
+				desc = "delete current bufffer",
+				mode = "n",
+				callback = function()
+					require("snacks").bufdelete.delete()
+				end,
+			},
+			{
+				"<leader>X",
+				desc = "delete all other bufers",
+				mode = "n",
+				callback = function()
+					require("snacks").bufdelete.other()
+				end,
+			},
 			{ "<leader>g", group = "git", mode = "n" },
 			{
 				"<leader>go",
@@ -73,22 +89,6 @@ return {
 				end,
 				desc = "git branches",
 			},
-			-- {
-			-- 	"<leader>e",
-			-- 	desc = "Toggle file explorer",
-			-- 	mode = "n",
-			-- 	callback = function()
-			-- 		require("snacks").explorer()
-			-- 	end,
-			-- },
-			-- {
-			-- 	"<leader>E",
-			-- 	desc = "Find current file in explorer",
-			-- 	mode = "n",
-			-- 	callback = function()
-			-- 		require("snacks").picker.explorer({ follow_file = true })
-			-- 	end,
-			-- },
 			{
 				"<leader>gl",
 				mode = "n",
@@ -101,13 +101,10 @@ return {
 			{ "<localleader>l", group = "latex", mode = "n", icon = { icon = " ", color = "green" } },
 			{
 				"<localleader>t",
-				group = "typst",
-				desc = "typst preview",
+				desc = "typst live preview",
 				mode = "n",
-				icon = { icon = " ", color = "brown" },
+				icon = { icon = " ", color = "brown" },
 			},
-			{ "<localleader>tl", "<cmd>TypstPreviewToggle<CR>", desc = "live preview (toggle)", mode = "n" },
-			{ "<localleader>tp", "<cmd>TypstWatch<CR>", desc = "preview pdf", mode = "n" },
 			{
 				"<leader>fi",
 				function()
@@ -165,8 +162,6 @@ return {
 			{ "<leader>r", group = "iron repl", mode = "n", icon = " " },
 			{ "<leader>m", group = "iron mark", mode = "n", icon = "󰙒 " },
 			{ "<leader>a", group = "sidekick", mode = "n", icon = " " },
-			{ "]w", callback = "<C-w>l", mode = "n", desc = "window right" },
-			{ "[w", callback = "<C-w>h", mode = "n", desc = "window left" },
 		},
 	},
 }

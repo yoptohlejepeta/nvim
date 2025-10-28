@@ -15,7 +15,6 @@
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "9a10e096703966335bd5c46c8c875d5b0690dade" },
   "mason.nvim": { "branch": "main", "commit": "ad7146aa61dcaeb54fa900144d768f040090bff0" },
   "mini.move": { "branch": "main", "commit": "f33406ae7d95b931c6a0d3ba11e50983fe800afb" },
-  "mini.pick": { "branch": "main", "commit": "bb764a57b349ad3e8d5e7d8855b0c6104e2cc17c" },
   "mini.starter": { "branch": "main", "commit": "b43df0b0c66b14802e28d4761ed902704e3796e3" },
   "mini.surround": { "branch": "main", "commit": "444e155147e2b5159dd28a65f9736254c16cb817" },
   "neogen": { "branch": "main", "commit": "d7f9461727751fb07f82011051338a9aba07581d" },
