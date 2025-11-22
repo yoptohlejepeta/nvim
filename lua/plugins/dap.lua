@@ -21,6 +21,58 @@ return {
 			local dap = require("dap")
 			local dapui = require("dapui")
 
+			dap.configurations.python = {
+				{
+					type = "python",
+					request = "launch",
+					name = "Launch file",
+					program = "${file}",
+					pythonPath = function()
+						return "/usr/bin/python3"
+					end,
+				},
+				{
+					type = "python",
+					request = "launch",
+					name = "Run with uv",
+					program = "${file}",
+					pythonPath = function()
+						return vim.fn.system("uv python"):gsub("\n", "")
+					end,
+				},
+				{
+					type = "python",
+					request = "launch",
+					name = "Run with poetry",
+					program = "${file}",
+					pythonPath = function()
+						return vim.fn.system("poetry env info -p"):gsub("\n", "") .. "/bin/python"
+					end,
+				},
+				{
+					type = "python",
+					request = "launch",
+					name = "Run project with uv",
+					module = "src",
+					cwd = "${workspaceFolder}",
+					pythonPath = function()
+						return "${workspaceFolder}/.venv/bin/python"
+					end,
+					env = { PYTHONPATH = "${workspaceFolder}" },
+				},
+				{
+					type = "python",
+					request = "launch",
+					name = "Run project with poetry",
+					module = "src",
+					cwd = "${workspaceFolder}",
+					pythonPath = function()
+						return vim.fn.system("poetry env info -p"):gsub("\n", "") .. "/bin/python"
+					end,
+					env = { PYTHONPATH = "${workspaceFolder}" },
+				},
+			}
+
 			dap.listeners.after.event_initialized["dapui_config"] = function()
 				dapui.open()
 			end

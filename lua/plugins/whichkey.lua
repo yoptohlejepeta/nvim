@@ -5,8 +5,6 @@ return {
 		preset = "helix",
 		delay = 500,
 		spec = {
-			{ "<leader>w", hidden = true },
-			{ "<leader>q", hidden = true },
 			{ "<leader>f", group = "find", mode = "n", icon = { icon = " ", color = "white" } },
 			{
 				"<leader>ff",
@@ -14,6 +12,30 @@ return {
 				mode = "n",
 				callback = function()
 					require("snacks").picker.files()
+				end,
+			},
+			{
+				"<leader>fd",
+				desc = "diagnostics",
+				mode = "n",
+				callback = function()
+					require("snacks").picker.diagnostics()
+				end,
+			},
+			{
+				"<leader>fl",
+				desc = "diagnostics",
+				mode = "n",
+				callback = function()
+					require("snacks").picker.lines()
+				end,
+			},
+			{
+				"<leader>fh",
+				desc = "diagnostics",
+				mode = "n",
+				callback = function()
+					require("snacks").picker.help()
 				end,
 			},
 			{
@@ -54,6 +76,14 @@ return {
 				mode = "n",
 				callback = function()
 					require("snacks").picker.lsp_workspace_symbols({ layout = { preset = "right" } })
+				end,
+			},
+			{
+				"<leader>fq",
+				desc = "quickfix list",
+				mode = "n",
+				callback = function()
+					require("snacks").picker.qflist()
 				end,
 			},
 			{
@@ -100,12 +130,6 @@ return {
 			{ "<leader>d", group = "debug", mode = "n" },
 			{ "<localleader>l", group = "latex", mode = "n", icon = { icon = " ", color = "green" } },
 			{
-				"<localleader>t",
-				desc = "typst live preview",
-				mode = "n",
-				icon = { icon = " ", color = "brown" },
-			},
-			{
 				"<leader>fi",
 				function()
 					require("snacks").picker.icons()
@@ -113,18 +137,11 @@ return {
 				desc = "find icons",
 			},
 			{
-				"<C-\\>",
+				"<leader>t",
 				callback = function()
 					require("snacks").terminal.toggle()
 				end,
 				desc = "toggle terminal",
-			},
-			{
-				"<C-|>",
-				callback = function()
-					require("snacks").terminal.open()
-				end,
-				desc = "temporary terminal",
 			},
 			{
 				"gd",
@@ -133,6 +150,14 @@ return {
 				callback = function()
 					require("snacks").picker.lsp_definitions()
 				end,
+			},
+			{
+				"grr",
+				callback = function()
+					require("snacks.picker").lsp_references()
+				end,
+				nowait = true,
+				desc = "references",
 			},
 			{
 				"<localleader>i",
@@ -150,18 +175,6 @@ return {
 				desc = "lazydocker",
 				icon = { icon = " ", color = "azure" },
 			},
-			{
-				"<leader>y",
-				callback = function()
-					require("snacks").terminal("yazi")
-				end,
-				desc = "yazi",
-				icon = { icon = "󰇥 ", color = "yellow" },
-			},
-			{ "<leader>s", group = "iron send", mode = "n", icon = " " },
-			{ "<leader>r", group = "iron repl", mode = "n", icon = " " },
-			{ "<leader>m", group = "iron mark", mode = "n", icon = "󰙒 " },
-			{ "<leader>a", group = "sidekick", mode = "n", icon = " " },
 		},
 	},
 }

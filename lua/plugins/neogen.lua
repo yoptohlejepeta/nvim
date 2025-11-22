@@ -5,6 +5,14 @@ return {
 		neogen.setup({
 			enabled = true,
 			snippet_engine = "luasnip",
+
+			languages = {
+				python = {
+					template = {
+						annotation_convention = "numpydoc",
+					},
+				},
+			},
 		})
 
 		local wk = require("which-key")

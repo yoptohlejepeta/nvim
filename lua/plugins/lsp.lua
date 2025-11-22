@@ -8,7 +8,6 @@ return {
 	},
 	config = function()
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
-		-- local lspconfig = require("lspconfig")
 
 		vim.lsp.inlay_hint.enable()
 
@@ -30,13 +29,17 @@ return {
 			"marksman",
 			"yamlls",
 			"sqls",
+			"postgres_lsp",
 			"templ",
 			"jsonls",
 			"taplo",
 			"elmls",
 			"zls",
 			"bashls",
-      "r_language_server",
+			"r_language_server",
+			"nil_ls",
+			"vue_ls",
+			"ts_ls",
 		}
 
 		for _, server in ipairs(servers) do
@@ -48,8 +51,6 @@ return {
 						diagnostics = { globals = { "vim" } },
 					},
 				}
-			elseif server == "sqls" then
-				opts.filetypes = { "sql", "mysql", "plsql" }
 			elseif server == "gopls" then
 				opts.settings = {
 					gopls = {
@@ -62,17 +63,20 @@ return {
 				}
 			elseif server == "tinymist" then
 				opts.settings = {
-					{
-						offset_encoding = "utf-8",
-						lint = {
-							enabled = true,
-							when = "onType",
-						},
-					},
 					exportPdf = "onType",
 					formatterMode = "typstyle",
-					semanticTokens = "disable",
 				}
+			elseif server == "ts_ls" then
+				opts.init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = vim.fn.stdpath("data") .. "/mason/packages/@vue/typescript-plugin",
+							languages = { "vue" },
+						},
+					},
+				}
+				opts.filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" }
 			end
 
 			vim.lsp.config[server] = opts

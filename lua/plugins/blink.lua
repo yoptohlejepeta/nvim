@@ -1,14 +1,28 @@
 return {
 	"saghen/blink.cmp",
-	dependencies = { "rafamadriz/friendly-snippets", "onsails/lspkind.nvim" },
+	dependencies = {
+		"onsails/lspkind.nvim",
+		{
+			"L3MON4D3/LuaSnip",
+			dependencies = { "rafamadriz/friendly-snippets" },
+			version = "v2.*",
+			build = "make install_jsregexp",
+			config = function()
+				require("luasnip.loaders.from_vscode").lazy_load()
+			end,
+		},
+	},
 	version = "1.*",
 	opts = {
+		snippets = {
+			preset = "luasnip",
+		},
 		keymap = {
-      preset = "enter",
-    },
+			preset = "enter",
+		},
 		appearance = {
-      nerd_font_variant = "mono",
-    },
+			nerd_font_variant = "mono",
+		},
 		completion = {
 			keyword = {
 				range = "full",
@@ -34,10 +48,8 @@ return {
 										mode = "symbol",
 									})
 								end
-
 								return icon .. ctx.icon_gap
 							end,
-
 							highlight = function(ctx)
 								local hl = ctx.kind_hl
 								if vim.tbl_contains({ "Path" }, ctx.source_name) then
@@ -65,7 +77,6 @@ return {
 				},
 			},
 		},
-
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
 	opts_extend = { "sources.default" },
