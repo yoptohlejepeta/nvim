@@ -38,8 +38,6 @@ return {
 			"bashls",
 			"r_language_server",
 			"nil_ls",
-			"vue_ls",
-			"ts_ls",
 		}
 
 		for _, server in ipairs(servers) do
@@ -66,17 +64,17 @@ return {
 					exportPdf = "onType",
 					formatterMode = "typstyle",
 				}
-			elseif server == "ts_ls" then
-				opts.init_options = {
-					plugins = {
-						{
-							name = "@vue/typescript-plugin",
-							location = vim.fn.stdpath("data") .. "/mason/packages/@vue/typescript-plugin",
-							languages = { "vue" },
+			elseif server == "rust_analyzer" then
+				opts.settings = {
+					["rust-analyzer"] = {
+						cargo = {
+							allFeatures = true,
+						},
+						procMacro = {
+							enable = true,
 						},
 					},
 				}
-				opts.filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" }
 			end
 
 			vim.lsp.config[server] = opts

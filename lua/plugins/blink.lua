@@ -20,6 +20,10 @@ return {
 		keymap = {
 			preset = "enter",
 		},
+		signature = {
+			enabled = true,
+			trigger = { enabled = true },
+		},
 		appearance = {
 			nerd_font_variant = "mono",
 		},
@@ -66,8 +70,13 @@ return {
 			},
 		},
 		sources = {
-			default = { "snippets", "lsp", "path", "buffer", "dadbod" },
+			default = { "lazydev", "snippets", "lsp", "path", "buffer", "dadbod" },
 			providers = {
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					score_offset = 100,
+				},
 				snippets = {
 					score_offset = 0,
 				},

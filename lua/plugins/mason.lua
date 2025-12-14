@@ -41,8 +41,6 @@ return {
 					"bashls",
 					"r_language_server",
 					"nil_ls",
-          "vue_ls",
-          "ts_ls",
 				},
 				automatic_installation = true,
 			})

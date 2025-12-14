@@ -14,29 +14,23 @@ return {
 		end,
 	},
 	{
-		"nvim-mini/mini.statusline",
-		version = false,
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			require("mini.statusline").setup()
+			require("lualine").setup({
+				options = {
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
+				},
+				sections = {
+					lualine_a = { "mode" },
+					lualine_b = { "branch", "diff", "diagnostics" },
+					lualine_c = { "filename" },
+					lualine_x = { "filetype" },
+					lualine_y = {},
+					lualine_z = { "location" },
+				},
+			})
 		end,
 	},
-	-- {
-	-- 	"nvim-mini/mini.starter",
-	-- 	version = false,
-	-- 	config = function()
-	-- 		require("mini.starter").setup({
-	-- 			header = "",
-	-- 			items = {
-	-- 				{ name = "Files", action = ":lua Snacks.picker.files()", section = " " },
-	-- 				{ name = "Projects", action = ":lua Snacks.dashboard.pick('projects')", section = " " },
-	-- 				{ name = "Oil", action = ":Oil --float", section = " " },
-	-- 				{ name = "Yazi", action = ":lua Snacks.terminal('yazi')", section = " " },
-	-- 				{ name = "Lazy 󰒲 ", action = ":Lazy", section = " " },
-	-- 				{ name = "Mason  ", action = ":Mason", section = " " },
-	-- 				{ name = "Quit 󰈆 ", action = ":qa!", section = "" },
-	-- 			},
-	-- 			footer = "",
-	-- 		})
-	-- 	end,
-	-- },
 }

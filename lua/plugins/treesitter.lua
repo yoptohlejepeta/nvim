@@ -35,8 +35,9 @@ return {
 					"gomod",
 					"gosum",
 					"nix",
-					"vue",
 					"typescript",
+					"rust",
+					"dart",
 				},
 				highlight = {
 					enable = true,

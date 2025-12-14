@@ -4,18 +4,59 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("vague").setup({ style = { strings = "none" } })
+			require("vague").setup({ style = { strings = "none", keywords = "bold" } })
 
 			vim.cmd("colorscheme vague")
 		end,
 	},
 	{
-		"neanias/everforest-nvim",
+		"alexpasmantier/hubbamax.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"marko-cerovac/material.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("everforest").setup({
-				background = "hard",
+			require("material").setup({
+
+				styles = {
+					comments = {
+						italic = true,
+					},
+					functions = {
+						bold = true,
+					},
+					operators = {},
+					types = { bold = true },
+				},
+
+				plugins = {
+					"blink",
+					"dap",
+					"gitsigns",
+					"mini",
+					-- "neo-tree",
+					-- "neogit",
+					-- "neorg",
+					-- "neotest",
+					-- "noice",
+					-- "nvim-cmp",
+					-- "nvim-navic",
+					-- "nvim-notify",
+					-- "nvim-tree",
+					"nvim-web-devicons",
+					-- "rainbow-delimiters",
+					-- "sneak",
+					-- "telescope",
+					"trouble",
+					"which-key",
+				},
+
+				disable = {
+					colored_cursor = true,
+				},
 			})
 		end,
 	},
