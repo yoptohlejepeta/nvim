@@ -11,19 +11,19 @@ map("n", "<leader>m", ":update<CR> :make<CR>")
 map("n", "<C-a>", "gg<S-v>G", { desc = "select all" })
 
 map("n", "<localleader>o", function()
-	local ft = vim.bo.filetype
+  local ft = vim.bo.filetype
 
-	print("Opening ", ft)
-	if ft == "typst" then
-		return vim.cmd("TypstPreviewToggle")
-	elseif ft == "markdown" then
-		local peek = require("peek")
-		if not peek.is_open() then
-			return peek.open()
-		else
-			return peek.close()
-		end
+  print("Opening ", ft)
+  if ft == "typst" then
+    return vim.cmd("TypstPreviewToggle")
+  elseif ft == "markdown" then
+    local peek = require("peek")
+    if not peek.is_open() then
+      return peek.open()
+    else
+      return peek.close()
+    end
   else
     return vim.cmd("Open %")
-	end
+  end
 end)
