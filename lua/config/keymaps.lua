@@ -23,6 +23,8 @@ map("n", "<localleader>o", function()
     else
       return peek.close()
     end
+  elseif ft == "quarto" then
+    return vim.cmd("QuartoPreview")
   else
     return vim.cmd("Open %")
   end

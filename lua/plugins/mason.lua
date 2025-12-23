@@ -18,7 +18,8 @@ return {
 				ensure_installed = {
 					"clangd",
 					"hls",
-					"pyright",
+					-- "pyright",
+					"basedpyright",
 					"gopls",
 					"rust_analyzer",
 					"julials",
