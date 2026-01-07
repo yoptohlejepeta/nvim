@@ -32,7 +32,7 @@ return {
 			},
 			{
 				"<leader>fh",
-				desc = "diagnostics",
+				desc = "help",
 				mode = "n",
 				callback = function()
 					require("snacks").picker.help()
