@@ -11,5 +11,5 @@ vim.opt.wrap = false
 vim.opt.fillchars:append({ eob = " " })
 vim.opt.clipboard = "unnamedplus"
 
-vim.o.winborder = "rounded"
+vim.o.winborder = "bold"
 vim.opt.termguicolors = true
