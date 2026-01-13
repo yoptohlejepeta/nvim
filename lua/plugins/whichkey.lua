@@ -11,7 +11,9 @@ return {
 				desc = "files",
 				mode = "n",
 				callback = function()
-					require("snacks").picker.files()
+					require("snacks").picker.files({
+						layout = { fullscreen = true, preset = "default" },
+					})
 				end,
 			},
 			{

@@ -5,18 +5,18 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	lazy = false,
+	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = true },
 		bufdelete = { enabled = true },
 		image = {
-			enabled = true,
 			doc = {
 				inline = false,
 				float = false,
 			},
 		},
 		picker = { enabled = true },
-		dashboard = { enabled = true, preset = { header = "" } },
+		dashboard = { preset = { header = "" } },
 		terminal = {
 			win = {
 				wo = {
