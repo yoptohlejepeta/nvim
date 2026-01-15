@@ -1,5 +1,12 @@
 return {
 	{
+		"nvim-mini/mini.icons",
+		version = false,
+		config = function()
+			require("mini.icons").setup()
+		end,
+	},
+	{
 		"nvim-mini/mini.move",
 		version = false,
 		config = function()
@@ -15,7 +22,7 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = { "nvim-mini/mini.icons" },
 		config = function()
 			require("lualine").setup({
 				options = {

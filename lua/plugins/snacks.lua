@@ -2,7 +2,7 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	dependencies = {
-		"nvim-tree/nvim-web-devicons",
+		"nvim-mini/mini.icons",
 	},
 	lazy = false,
 	---@type snacks.Config
@@ -15,7 +15,16 @@ return {
 				float = false,
 			},
 		},
-		picker = { enabled = true },
+		picker = {
+			layouts = {
+				default = {
+					layout = {
+						width = 0.99,
+						height = 0.99,
+					},
+				},
+			},
+		},
 		dashboard = { preset = { header = "" } },
 		terminal = {
 			win = {

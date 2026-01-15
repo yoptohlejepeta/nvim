@@ -1,11 +1,12 @@
 return {
 	"stevearc/oil.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-mini/mini.icons" },
 	lazy = false,
 	config = function()
 		require("oil").setup({
 			float = {
 				preview_split = "right",
+				padding = 0,
 			},
 		})
 
