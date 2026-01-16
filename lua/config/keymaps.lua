@@ -16,13 +16,6 @@ map("n", "<localleader>o", function()
 	print("Opening ", ft)
 	if ft == "typst" then
 		return vim.cmd("TypstPreviewToggle")
-	elseif ft == "markdown" then
-		local peek = require("peek")
-		if not peek.is_open() then
-			return peek.open()
-		else
-			return peek.close()
-		end
 	elseif ft == "quarto" then
 		return vim.cmd("QuartoPreview")
 	else
