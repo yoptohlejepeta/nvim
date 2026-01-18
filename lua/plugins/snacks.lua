@@ -17,6 +17,11 @@ return {
 		},
 		statuscolumn = { enabled = true },
 		picker = {
+			layout = {
+				preset = function()
+					return vim.o.columns >= 80 and "default" or "vertical"
+				end,
+			},
 			layouts = {
 				default = {
 					layout = {
