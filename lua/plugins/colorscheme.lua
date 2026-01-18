@@ -1,6 +1,5 @@
 return {
 	{
-		-- vague but with colors from rusty colorscheme
 		"vague-theme/vague.nvim",
 		lazy = false,
 		priority = 1000,

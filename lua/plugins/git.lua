@@ -5,13 +5,6 @@ return {
 		config = function()
 			local gs = require("gitsigns")
 			gs.setup({
-				signs = {
-					add = { text = "▌" },
-					change = { text = "▌" },
-					delete = { text = "▌" },
-					topdelete = { text = "▌" },
-					changedelete = { text = "▌" },
-				},
 				signcolumn = true,
 				numhl = false,
 				linehl = false,

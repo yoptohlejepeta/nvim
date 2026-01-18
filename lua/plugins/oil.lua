@@ -6,7 +6,7 @@ return {
 		require("oil").setup({
 			float = {
 				preview_split = "right",
-				padding = 0,
+				padding = 1,
 			},
 		})
 
