@@ -4,10 +4,10 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {},
-    config=function()
-
-    vim.g.gruvbox_material_background = 'hard'
-    end
+		config = function()
+			vim.g.gruvbox_material_background = "hard"
+			vim.cmd("colorscheme gruvbox-material")
+		end,
 	},
 	{
 		"vague-theme/vague.nvim",
@@ -20,7 +20,6 @@ return {
 					keywords = "bold",
 				},
 			})
-			vim.cmd("colorscheme vague")
 		end,
 	},
 	{
