@@ -6,6 +6,8 @@ return {
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
+					"just",
+					"make",
 					"c",
 					"bash",
 					"dockerfile",
@@ -38,7 +40,6 @@ return {
 					"nix",
 					"typescript",
 					"rust",
-					"dart",
 				},
 				highlight = {
 					enable = true,

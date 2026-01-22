@@ -12,6 +12,7 @@ return {
 		vim.lsp.inlay_hint.enable()
 
 		local servers = {
+			"just",
 			"clangd",
 			"hls",
 			"pyright",

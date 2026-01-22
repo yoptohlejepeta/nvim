@@ -21,4 +21,5 @@ require("lazy").setup({
 	checker = { enabled = false },
 	change_detection = { notify = false },
 	install = { colorscheme = { "vague" } },
+  ui = {size = {width = 0.95, height = 0.95}}
 })

@@ -64,8 +64,8 @@ return {
 		config = function(_, opts)
 			require("overseer").setup(opts)
 
-			vim.keymap.set("n", "<leader>m", ":OverseerRun<CR>")
-			vim.keymap.set("n", "<localleader>m", ":OverseerToggle<CR>")
+			vim.keymap.set("n", "<localleader>m", ":OverseerRun<CR>")
+			vim.keymap.set("n", "<localleader>M", ":OverseerToggle<CR>")
 		end,
 	},
 	{
