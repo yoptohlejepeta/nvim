@@ -6,13 +6,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "python",
-	callback = function()
-		vim.opt_local.makeprg = "pyright ."
-	end,
-})
-
-vim.api.nvim_create_autocmd("FileType", {
 	pattern = "elm",
 	callback = function()
 		vim.opt_local.makeprg = "elm make %"

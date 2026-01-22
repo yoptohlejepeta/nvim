@@ -7,6 +7,7 @@ return {
 	lazy = false,
 	---@type snacks.Config
 	opts = {
+		notifier = { enabled = true },
 		bigfile = { enabled = true },
 		bufdelete = { enabled = true },
 		image = {

@@ -57,6 +57,18 @@ return {
 		},
 	},
 	{
+		"stevearc/overseer.nvim",
+		---@module 'overseer'
+		---@type overseer.SetupOpts
+		opts = {},
+		config = function(_, opts)
+			require("overseer").setup(opts)
+
+			vim.keymap.set("n", "<leader>m", ":OverseerRun<CR>")
+			vim.keymap.set("n", "<localleader>m", ":OverseerToggle<CR>")
+		end,
+	},
+	{
 		{
 			"folke/lazydev.nvim",
 			ft = "lua",
