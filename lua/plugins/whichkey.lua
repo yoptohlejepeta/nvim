@@ -11,8 +11,8 @@ return {
 				desc = "files",
 				mode = "n",
 				callback = function()
-          require("snacks").picker.files()
-        end,
+					require("snacks").picker.files()
+				end,
 			},
 			{
 				"<leader>fd",

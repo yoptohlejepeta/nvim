@@ -60,7 +60,12 @@ return {
 		"stevearc/overseer.nvim",
 		---@module 'overseer'
 		---@type overseer.SetupOpts
-		opts = {},
+		opts = {
+			task_list = {
+				max_height = 0.8,
+				min_height = 0.4,
+			},
+		},
 		config = function(_, opts)
 			require("overseer").setup(opts)
 

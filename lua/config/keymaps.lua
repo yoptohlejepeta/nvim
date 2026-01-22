@@ -4,7 +4,7 @@ map("n", "<leader>w", ":w<CR>")
 map("n", "<leader>q", ":q<CR>")
 map("n", "<leader>Q", ":q!<CR>")
 
-map("n", "<leader>m", ":update<CR> :make<CR>")
+-- map("n", "<leader>m", ":update<CR> :make<CR>")
 
 -- map("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 -- map("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
