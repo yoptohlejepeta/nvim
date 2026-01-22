@@ -4,7 +4,13 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("nordic").load()
+			require("nordic").setup({
+				bold_keywords = true,
+				swap_backgrounds = true,
+				cursorline = {
+					theme = "light",
+				},
+			})
 			vim.cmd("colorscheme nordic")
 		end,
 	},
