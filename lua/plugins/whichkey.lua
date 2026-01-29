@@ -67,7 +67,7 @@ return {
 				desc = "lsp symbols",
 				mode = "n",
 				callback = function()
-					require("snacks").picker.lsp_symbols({ layout = { preset = "right" } })
+					require("snacks").picker.lsp_symbols({ layout = { preset = "dropdown" } })
 				end,
 			},
 			{
@@ -75,7 +75,7 @@ return {
 				desc = "workspace lsp symbols",
 				mode = "n",
 				callback = function()
-					require("snacks").picker.lsp_workspace_symbols({ layout = { preset = "right" } })
+					require("snacks").picker.lsp_workspace_symbols({ layout = { preset = "dropdown" } })
 				end,
 			},
 			{

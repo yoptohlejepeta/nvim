@@ -16,7 +16,6 @@ return {
 				float = false,
 			},
 		},
-		statuscolumn = { enabled = true },
 		picker = {
 			layout = {
 				preset = function()
