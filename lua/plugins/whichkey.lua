@@ -139,7 +139,7 @@ return {
 			{
 				"<leader>t",
 				callback = function()
-					require("snacks").terminal.toggle()
+					require("snacks").terminal.toggle("zsh")
 				end,
 				desc = "toggle terminal",
 			},

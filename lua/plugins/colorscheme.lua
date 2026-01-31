@@ -10,6 +10,9 @@ return {
 				cursorline = {
 					theme = "light",
 				},
+				ts_context = {
+					dark_background = false,
+				},
 			})
 			vim.cmd("colorscheme nordic")
 		end,
