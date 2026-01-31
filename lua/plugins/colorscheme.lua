@@ -14,7 +14,7 @@ return {
 					dark_background = false,
 				},
 			})
-			vim.cmd("colorscheme nordic")
+			-- vim.cmd("colorscheme nordic")
 		end,
 	},
 	{
@@ -22,10 +22,21 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			-- NOTE: you do not need to call setup if you don't want to.
-			-- require("vague").setup({
-			-- })
-			-- vim.cmd("colorscheme vague")
+			require("vague").setup({
+				style = {
+					strings = "none",
+				},
+				plugins = {
+					lsp = {
+						diagnostic_error = "italic",
+						diagnostic_hint = "italic",
+						diagnostic_info = "italic",
+						diagnostic_ok = "italic",
+						diagnostic_warn = "italic",
+					},
+				},
+			})
+			vim.cmd("colorscheme vague")
 		end,
 	},
 	{
