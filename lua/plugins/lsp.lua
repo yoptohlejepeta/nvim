@@ -82,12 +82,20 @@ return {
 			vim.lsp.enable(server)
 		end
 
-		vim.diagnostic.config({
-			virtual_text = true,
+		---@type vim.diagnostic.Opts
+		local cfg = {
+			virtual_text = false,
+			virtual_lines = true,
+			update_in_insert = false,
 			signs = false,
-			update_in_insert = true,
 			severity_sort = true,
-		})
+			---@type vim.diagnostic.Opts.Jump
+			jump = {
+				float = true,
+			},
+		}
+
+		vim.diagnostic.config(cfg)
 
 		vim.keymap.set("n", "gb", "<C-o>", { desc = "Go Back from Definition" })
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to Declaration" })

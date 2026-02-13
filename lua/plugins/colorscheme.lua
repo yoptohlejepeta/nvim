@@ -1,20 +1,14 @@
 return {
 	{
-		"AlexvZyl/nordic.nvim",
-		lazy = false,
-		priority = 1000,
+		"rose-pine/neovim",
+		name = "rose-pine",
 		config = function()
-			require("nordic").setup({
-				bold_keywords = true,
-				swap_backgrounds = true,
-				cursorline = {
-					theme = "light",
-				},
-				ts_context = {
-					dark_background = false,
+			require("rose-pine").setup({
+				disable_italics = true,
+				highlight_groups = {
+					Comment = { italic = true },
 				},
 			})
-			-- vim.cmd("colorscheme nordic")
 		end,
 	},
 	{
@@ -25,15 +19,8 @@ return {
 			require("vague").setup({
 				style = {
 					strings = "none",
-				},
-				plugins = {
-					lsp = {
-						diagnostic_error = "italic",
-						diagnostic_hint = "italic",
-						diagnostic_info = "italic",
-						diagnostic_ok = "italic",
-						diagnostic_warn = "italic",
-					},
+					keyword_return = "bold",
+					keywords = "bold",
 				},
 			})
 			vim.cmd("colorscheme vague")
